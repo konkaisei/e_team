@@ -1,0 +1,55 @@
+package com.example.music_management.service;
+
+import java.util.List;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.music_management.entity.Album;
+import com.example.music_management.form.AlbumForm;
+import com.example.music_management.repository.AlbumRepository;
+import com.example.music_management.viewmodel.AlbumViewModel;
+import com.example.music_management.exception.AlbumNotFoundException;
+
+@Service
+public class AlbumService {
+    private final AlbumRepository albumRepository;
+
+    public AlbumService(AlbumRepository albumRepository){
+        this.albumRepository = albumRepository;
+    }
+
+    public List<Album> getAllAlbums(){
+        return albumRepository.getAllAlbum();
+    }
+
+    public void createAlbum(AlbumForm albumForm){
+        Album album = new Album();
+        album.setTitle(albumForm.getTitle());
+        album.setArtist(albumForm.getArtist());
+        album.setReleaseDate(albumForm.getReleaseDate());
+        albumRepository.insertAlbum(album);
+    }
+    public Album getAlbumById(long albumId) {
+        return albumRepository.getAlbumById(albumId);
+    }
+
+    public void deleteAlbum(long albumId){
+        albumRepository.deleteAlbum(albumId);
+    }
+
+    @Transactional
+    public void updateAlbum(long albumId,Album album){
+        Album existingAlbum = getAlbumById(albumId);
+        if (existingAlbum == null) {
+            throw new AlbumNotFoundException("Album not found");
+        }
+        if(albumId != album.getAlbumId()){
+            throw new AlbumNotFoundException("Album ID does not match");
+        }
+        albumRepository.updateAlbum(album);
+    }
+
+    public List<AlbumViewModel> getAllAlbumsWithMusicCount(){
+        return albumRepository.getAllAlbumsWithMusicCount();
+    }
+}
