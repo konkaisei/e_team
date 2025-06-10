@@ -5,7 +5,7 @@
     <div class="container mt-4 mb-4">
       <div class="card p-4 w-50 mx-auto">
     <div th:replace="~{layout :: header}"></div>
-    <h3>ユーザ登録</h3>
+
     <form th:action="@{/register}" th:object="${userForm}" method="post">
         <div class="mb-3">
             <label class="form-label" for="exampleInputEmail1">ユーザ名：</label>
