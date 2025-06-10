@@ -2,18 +2,23 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{layout :: head(ユーザ登録)}"></head>
 <body>
+    <div class="container mt-4 mb-4">
+      <div class="card p-4 w-50 mx-auto">
     <div th:replace="~{layout :: header}"></div>
     <h3>ユーザ登録</h3>
     <form th:action="@{/register}" th:object="${userForm}" method="post">
-        <div>
-            <label for="username">ユーザ名：</label>
-            <input type="text" id="username" name="username" th:field="*{username}">
+        <div class="mb-3">
+            <label class="form-label" for="exampleInputEmail1">ユーザ名：</label>
+            <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"th:field="*{username}">
         </div>
-        <div>
-            <label for="password">パスワード：</label>
-            <input type="password" id="password" name="password" th:field="*{password}">
+        <div class="mb-3">
+            <label class="form-label" for="exampleInputPassword1" >パスワード：</label>
+            <input type="password" name="password"class="form-control" id="exampleInputPassword1" th:field="*{password}">
         </div>
-        <button type="submit">登録</button>
+        <button type="submit"class="btn btn-primary">登録</button>
     </form>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
