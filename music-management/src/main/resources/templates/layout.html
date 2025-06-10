@@ -10,8 +10,8 @@
     
         <ul>
             <button sec:authorize="isAuthenticated()"><a th:href="@{/albums}">ホーム</a></button>
-            <li sec:authorize="isAuthenticated()"><a th:href="@{/albums/new}">収入</a></li>
-            <li sec:authorize="isAuthenticated()"><a th:href="@{/albums/new}">支出</a></li>
+            <button sec:authorize="isAuthenticated()"><a th:href="@{/albums/new}">収入</a></button>
+            <button sec:authorize="isAuthenticated()"><a th:href="@{/albums/new}">支出</a></button>
             <li sec:authorize="isAnonymous()"><a th:href="@{/register}">ユーザ登録</a></li>
             <li sec:authorize="isAuthenticated()">
                 <form th:action="@{/logout}" method="post">
