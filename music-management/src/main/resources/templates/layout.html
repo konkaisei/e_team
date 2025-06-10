@@ -12,12 +12,12 @@
             <button sec:authorize="isAuthenticated()"><a th:href="@{/albums}">ホーム</a></button>
             <button sec:authorize="isAuthenticated()"><a th:href="@{/albums/new}">収入</a></button>
             <button sec:authorize="isAuthenticated()"><a th:href="@{/albums/new}">支出</a></button>
-            <li sec:authorize="isAnonymous()"><a th:href="@{/register}">ユーザ登録</a></li>
-            <li sec:authorize="isAuthenticated()">
+            <button sec:authorize="isAnonymous()"><a th:href="@{/register}">ユーザ登録</a></button>
+            <div sec:authorize="isAuthenticated()">
                 <form th:action="@{/logout}" method="post">
                     <button type="submit">ログアウト</button>
                 </form>
-            </li>
+            </div>
         </ul>
         </header>
     </div>
