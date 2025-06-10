@@ -9,7 +9,7 @@
         <header style="background-color: #f8f8f8;">
     
         <ul>
-            <li sec:authorize="isAuthenticated()"><a th:href="@{/albums}">ホーム</a></li>
+            <button sec:authorize="isAuthenticated()"><a th:href="@{/albums}">ホーム</a></button>
             <li sec:authorize="isAuthenticated()"><a th:href="@{/albums/new}">収入</a></li>
             <li sec:authorize="isAuthenticated()"><a th:href="@{/albums/new}">支出</a></li>
             <li sec:authorize="isAnonymous()"><a th:href="@{/register}">ユーザ登録</a></li>
