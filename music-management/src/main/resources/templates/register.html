@@ -4,16 +4,12 @@
 <body>
     <div class="container mt-4 mb-4">
       <div class="card p-4 w-50 mx-auto">
-    <div th:replace="~{layout :: header}"></div>
-
     <form th:action="@{/register}" th:object="${userForm}" method="post">
         <div class="mb-3">
-            <label class="form-label" for="exampleInputEmail1">ユーザ名：</label>
-            <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"th:field="*{username}">
+            <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"th:field="*{username}"placeholder="ユーザー名">
         </div>
         <div class="mb-3">
-            <label class="form-label" for="exampleInputPassword1" >パスワード：</label>
-            <input type="password" name="password"class="form-control" id="exampleInputPassword1" th:field="*{password}">
+            <input type="password" name="password"class="form-control" id="exampleInputPassword1" th:field="*{password}"placeholder="パスワード">
         </div>
         <button type="submit"class="btn btn-primary">登録</button>
     </form>
