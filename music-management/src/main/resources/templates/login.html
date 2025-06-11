@@ -19,8 +19,8 @@
             <input type="password"name="password"class="form-control" id="exampleInputPassword1" placeholder="パスワード">
         </div>
         <div style="display: flex; align-items: center;">
-            <button type="submit" class="btn btn-primary">ログイン</button>
-            <a sec:authorize="isAnonymous()" th:href="@{/register}" class="btn btn-primary" style="margin-left: 20px;">アカウント作成</a>
+            <button type="submit" class="btn btn-primary"style="background-color:#ffff93;">ログイン</button>
+            <a sec:authorize="isAnonymous()" th:href="@{/register}" class="btn btn-primary" style="margin-left: 20px;background-color:#ffff93;">アカウント作成</a>
         </div>
     </form>
     </div>
