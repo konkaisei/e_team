@@ -18,8 +18,10 @@
         <div class="mb-3">
             <input type="password"name="password"class="form-control" id="exampleInputPassword1" placeholder="パスワード">
         </div>
-        <button type="submit" class="btn btn-primary">ログイン</button>
-        <div th:replace="~{layout :: header}"></div>
+        <div style="display: flex; align-items: center;">
+            <button type="submit" class="btn btn-primary">ログイン</button>
+            <div th:replace="~{layout :: header}"></div>
+        </div>
     </form>
     </div>
   </div>
