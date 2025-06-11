@@ -14,12 +14,12 @@
     </div>
     <form th:action="@{/login}" method="post">
         <div class="mb-3">
-            <label class="form-label" for="exampleInputEmail1">ユーザ名：</label>
-            <input type="text" name="username"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <!-- <label class="form-label" for="exampleInputEmail1">ユーザ名：</label> -->
+            <input type="text" name="username"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="名前">
         </div>
         <div class="mb-3">
-            <label class="form-label" for="exampleInputPassword1" >パスワード：</label>
-            <input type="password"name="password"class="form-control" id="exampleInputPassword1">
+            <!-- <label class="form-label" for="exampleInputPassword1" >パスワード：</label> -->
+            <input type="password"name="password"class="form-control" id="exampleInputPassword1" value="パスワード">
         </div>
         <button type="submit" class="btn btn-primary">ログイン</button>
     </form>
