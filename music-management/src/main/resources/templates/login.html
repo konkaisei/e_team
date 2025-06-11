@@ -20,7 +20,7 @@
         </div>
         <div style="display: flex; align-items: center;">
             <button type="submit" class="btn btn-primary">ログイン</button>
-            <div th:replace="~{layout :: header}"></div>
+            <a sec:authorize="isAnonymous()" th:href="@{/register}" class="btn btn-primary">アカウント作成</a>
         </div>
     </form>
     </div>
