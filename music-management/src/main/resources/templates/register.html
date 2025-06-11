@@ -3,16 +3,21 @@
 <head th:replace="~{layout :: head(アカウント作成)}"></head>
 <body>
     <div class="container mt-4 mb-4">
-      <div class="card p-4 w-50 mx-auto">
+      <div class="card p-4 w-50 mx-auto"style="border:2px solid #ffa500;">
     <form th:action="@{/register}" th:object="${userForm}" method="post">
-        <div class="mb-3">
-            <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"th:field="*{username}"placeholder="ユーザー名"style="border:2px solid #ffa500;">
+       <div style="text-align: center;padding-bottom: 40px;">
+      <img th:src="@{/img/logo.png}"alt="ロゴ" style="width: 250px; height: 80px;">
+      </div> 
+      <div class="mb-3">
+            <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"th:field="*{username}"placeholder="ユーザー名"style="border:2px solid #ffa500;outline:none; box-shadow: 0 0 0 0.2rem rgba(255,165,0,0.25);">
         </div>
         <div class="mb-3">
-            <input type="password" name="password"class="form-control" id="exampleInputPassword1" th:field="*{password}"placeholder="パスワード"style="border:2px solid #ffa500;">
+            <input type="password" name="password"class="form-control" id="exampleInputPassword1" th:field="*{password}"placeholder="パスワード"style="border:2px solid #ffa500;outline:none; box-shadow: 0 0 0 0.2rem rgba(255,165,0,0.25);">
         </div>
-        <button type="submit"class="btn btn-primary"style="color:#ffa500;background-color:#ffff93;border:2px solid #ffa500;">アカウント作成</button>
-    </form>
+         <div style="display: flex; align-items: center;">
+         <button type="submit"class="btn btn-primary"style="margin:auto;color:#ffa500;background-color:#ffff93;border:2px solid #ffa500;">アカウント作成</button>
+        </div>
+      </form>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
