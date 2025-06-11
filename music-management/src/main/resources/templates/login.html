@@ -5,12 +5,12 @@
 <body>
   <div class="container mt-4 mb-4">
       <div class="card p-4 w-50 mx-auto">
-    
+    <div th:replace="~{layout :: header}"></div>
     <div th:if="${param.error}" style="color:red">
         ユーザ名、またはパスワードが違います
     </div>
     <div th:if="${param.register}" style="color:blue">
-        アカウント作成に成功しました
+        登録に成功しました
     </div>
     <form th:action="@{/login}" method="post">
         <div class="mb-3">
@@ -20,7 +20,6 @@
             <input type="password"name="password"class="form-control" id="exampleInputPassword1" placeholder="パスワード">
         </div>
         <button type="submit" class="btn btn-primary">ログイン</button>
-        <div th:replace="~{layout :: header}"></div>
     </form>
     </div>
   </div>

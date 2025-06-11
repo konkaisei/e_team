@@ -12,7 +12,7 @@
             <button sec:authorize="isAuthenticated()"><a th:href="@{/albums}">ホーム</a></button>
             <button sec:authorize="isAuthenticated()"><a th:href="@{/albums/new}">収入</a></button>
             <button sec:authorize="isAuthenticated()"><a th:href="@{/albums/new}">支出</a></button>
-            <button sec:authorize="isAnonymous()"class="btn btn-primary">アカウント作成<a th:href="@{/register}">アカウント作成</a></button>
+            <button sec:authorize="isAnonymous()"class="btn btn-primary"><a th:href="@{/register}">アカウント作成</a></button>
             <div sec:authorize="isAuthenticated()">
                 <form th:action="@{/logout}" method="post">
                     <button type="submit">ログアウト</button>
