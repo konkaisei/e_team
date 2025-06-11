@@ -5,7 +5,7 @@
 </head>
 <body>
   <div class="container mt-4 mb-4">
-      <div class="card p-4 w-50 mx-auto"style="border:2px solid #ffa500;">
+      <div class="card p-4 w-50 mx-auto"style="margin:13%;margin-bottom:auto;border:2px solid #ffa500;">
     <div th:if="${param.error}" style="color:red">
         ユーザ名、またはパスワードが違います
     </div>
@@ -13,14 +13,14 @@
         アカウント作成に成功しました!
     </div>
     <form th:action="@{/login}" method="post">
-      <div style="text-align: center;padding-bottom: 40px;">
+      <div style="text-align: center;padding-bottom: 20px;">
       <img th:src="@{/img/logo.png}"alt="ロゴ" style="width: 250px; height: 80px;left: 50%;">
       </div>  
-      <div class="mb-3">
-            <input type="text" name="username"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="名前"style="border:2px solid #ffa500;outline:none; box-shadow: 0 0 0 0.2rem rgba(255,255,255,1);">
+      <div class="mb-3"style="text-align: center;">
+            <input type="text" name="username"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="名前"style="border:2px solid #ffa500;outline:none; box-shadow: 0 0 0 0.2rem rgba(255,255,255,1);width: 250px; height:40px;left: 50%;">
         </div>
         <div class="mb-3">
-            <input type="password"name="password"class="form-control" id="exampleInputPassword1" placeholder="パスワード"style="border:2px solid #ffa500;outline:none; box-shadow: 0 0 0 0.2rem rgba(255,255,255,1);">
+            <input type="password"name="password"class="form-control" id="exampleInputPassword1" placeholder="パスワード"style="border:2px solid #ffa500;outline:none; box-shadow: 0 0 0 0.2rem rgba(255,255,255,1);width: 250px; height:40px;left: 50%;">
         </div>
         <div style="display: flex; align-items: center;">
             <button type="submit" class="btn btn-primary"style="color:#ffa500;background-color:#ffff93;border:2px solid #ffa500; margin:auto">ログイン</button>
