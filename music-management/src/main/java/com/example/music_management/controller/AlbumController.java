@@ -42,7 +42,7 @@ public class AlbumController {
         model.addAttribute("albumForm", albumForm);
         return "album/album-form";
     }
-    
+
     @GetMapping
     public String listAlbums(Model model) {
         
