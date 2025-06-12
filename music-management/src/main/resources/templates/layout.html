@@ -14,7 +14,7 @@
             <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500;"><a th:href="@{/albums}"style="Text-decoration: none;color:#ffa500;">ホーム</a></button>
             <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500;"><a th:href="@{/albums/new}"style="Text-decoration: none;color:#ffa500;">追加</a></button>
             <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500;"><a th:href="@{/albums/detail}"style="Text-decoration: none;color:#ffa500;">編集</a></button>
-            <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500;"><a th:href="@{/albums/new}"style="Text-decoration: none;color:#ffa500;">予算</a></button>
+            <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500;"><a th:href="@{/albums/budget-23}"style="Text-decoration: none;color:#ffa500;">予算</a></button>
             <div sec:authorize="isAuthenticated()">
                 <form th:action="@{/logout}" method="post">
                     <button type="submit"class="btn btn-primary"style="margin-right: 20px;color:#ffa500;background-color:#ffff93;border:2px solid #ffa500;">ログアウト</button>
