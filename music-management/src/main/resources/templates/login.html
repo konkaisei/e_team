@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{layout :: head(ログイン)}">
+<head th:replace="~{layout :: head('ログイン', ~{::links})}">
+    <th:block th:fragment="links">
+        <link rel="stylesheet" th:href="@{/css/login.css}">
+    </th:block>
 </head>
 <body>
   <div class="container mt-4 mb-4">

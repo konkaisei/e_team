@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang ="ja" xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="~{layout :: head(アルバム一覧)}"></head>
+    <head th:replace="~{layout :: head(アルバム一覧, ~{::links})}">
+        <th:block th:fragment="links">
+        </th:block>
+    </head>
     <body>
         <div th:replace="~{layout :: header}"></div>
         <div style="display: flex;  align-items: center;">

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{layout :: head(アカウント作成)}"></head>
+<head th:replace="~{layout :: head(アカウント作成, ~{::links})}">
+      <th:block th:fragment="links">
+    </th:block>
+</head>
 <body>
     <div class="container mt-4 mb-4">
       <div class="card p-4 w-50 mx-auto"style="margin:13%;margin-bottom:auto;border:2px solid #ffa500;">
