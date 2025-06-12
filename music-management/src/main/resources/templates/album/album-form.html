@@ -4,10 +4,22 @@
         <th:block th:fragment="links">
         </th:block>
     </head>
-    <body>
+     <body>
         <div th:replace="~{layout :: header}"></div>
-        <h3>アルバム登録</h3>
-        <form th:action="@{/albums/new}" th:object="${albumForm}" method="post">
+       
+ <div style="margin: 20px auto;">
+    <div style="display: flex;width: 200px; height: 30px;text-align: center;color:#ffa500;">収入と支出の切替</div>       
+
+       
+        </div>
+           <div style="color:#ffa500;background-color:#ffff93;border:2px solid #ffa500; width: 200px; height: 50px;text-align: center;">金額</div>
+           <div>
+             <input style="border:2px solid #ffa500; width: 200px; height: 50px;">
+            </div>
+            <button type="submit"style="margin-top:20px;color:#ffa500;background-color:#ffff93;border:2px solid #ffa500;">追加</button>
+        </div>
+        
+        <!-- <form th:action="@{/albums/new}" th:object="${albumForm}" method="post">
             <div>
                 <label for="title">タイトル</label>
                 <input type="text" id="title" name="title" th:field="*{title}">
@@ -21,6 +33,6 @@
                 <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}">
             </div>
             <button type="submit">追加</button>
-        </form>
+        </form> -->
     </body>
-</html>
+</html> 
