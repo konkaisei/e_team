@@ -5,16 +5,16 @@
     <div class="container mt-4 mb-4">
       <div class="card p-4 w-50 mx-auto"style="margin:13%;margin-bottom:auto;border:2px solid #ffa500;">
     <form th:action="@{/register}" th:object="${userForm}" method="post">
-       <div style="text-align: center;padding-bottom: 40px;">
-      <img th:src="@{/img/logo.png}"alt="ロゴ" style="width: 250px; height: 80px;">
+       <div style="text-align: center;padding-bottom: 20px;">
+      <img th:src="@{/img/logo.png}"alt="ロゴ" style="width: 260px; height: 80px;">
       </div> 
-      <div class="mb-3">
-            <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"th:field="*{username}"placeholder="ユーザー名"style="border:2px solid #ffa500;outline:none;box-shadow: 0 0 0 0.2rem rgba(255,255,255,1);">
+      <div class="mb-3" style="text-align: center;display: flex;justify-content: center;align-items: center">
+            <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"th:field="*{username}"placeholder="ユーザー名"style="border:2px solid #ffa500;outline:none;box-shadow: 0 0 0 0.2rem rgba(255,255,255,1);width: 350px; height:40px;">
         </div>
-        <div class="mb-3">
-            <input type="password" name="password"class="form-control" id="exampleInputPassword1" th:field="*{password}"placeholder="パスワード"style="border:2px solid #ffa500;outline:none; box-shadow: 0 0 0 0.2rem rgba(255,255,255,1);">
+        <div class="mb-3" style="text-align: center;display: flex;justify-content: center;align-items: center">
+            <input type="password" name="password"class="form-control" id="exampleInputPassword1" th:field="*{password}"placeholder="パスワード"style="border:2px solid #ffa500;outline:none; box-shadow: 0 0 0 0.2rem rgba(255,255,255,1);width: 350px; height:40px;margin-top: 15px;">
         </div>
-         <div style="display: flex; align-items: center;">
+         <div style="display: flex; align-items: center;margin-top: 30px;">
          <button type="submit"class="btn btn-primary"style="margin:auto;color:#ffa500;background-color:#ffff93;border:2px solid #ffa500;">アカウント作成</button>
         </div>
       </form>
