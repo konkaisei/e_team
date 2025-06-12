@@ -30,3 +30,33 @@ CREATE TABLE favorites (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (music_id) REFERENCES musics(music_id) ON DELETE CASCADE
 );
+
+--　schema.sqlに以下を追加
+CREATE TABLE incomes (
+    income_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    user_id INTEGER,
+    income_date DATE,
+    amount DECIMAL(10,2),
+    category VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE expenditures (
+    expenditure_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    user_id INTEGER,
+    expenditure_date DATE,
+    amount DECIMAL(10,2),
+    category VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE budgets (
+    budget_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    user_id INTEGER,
+    budget_date DATE,
+    budget_amount DECIMAL(10,2),
+    month_expenses DECIMAL(10,2),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
