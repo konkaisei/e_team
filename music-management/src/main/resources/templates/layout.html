@@ -9,15 +9,15 @@
     <body>
     <div th:fragment="header" style="margin-left: 0px;">
         <header>
-        <ul style="left: 0px;">
-            <img th:src="@{/img/logo.png}"alt="ロゴ" style="width: 260px; height: 80px;left: 50%;">
-            <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500;"><a th:href="@{/albums}"style="Text-decoration: none;color:#ffa500;">ホーム</a></button>
-            <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500;"><a th:href="@{/albums/new}"style="Text-decoration: none;color:#ffa500;">追加</a></button>
-            <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500;"><a th:href="@{/albums/detail}"style="Text-decoration: none;color:#ffa500;">編集</a></button>
-            <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500;"><a th:href="@{/albums/budget-23}"style="Text-decoration: none;color:#ffa500;">予算</a></button>
+        <ul style="left: 0px;display: flex;">
+            <img th:src="@{/img/logo.png}"alt="ロゴ" style="width: 200px; height: 80px;left: 50%;">
+            <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500; width: 100px; height: 70px;"><a th:href="@{/albums}"style="Text-decoration: none;color:#ffa500;">ホーム</a></button>
+            <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500; width: 100px; height: 70px;"><a th:href="@{/albums/new}"style="Text-decoration: none;color:#ffa500;">追加</a></button>
+            <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500; width: 100px; height: 70px;"><a th:href="@{/albums/detail}"style="Text-decoration: none;color:#ffa500;">編集</a></button>
+            <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500; width: 100px; height: 70px;"><a th:href="@{/albums/budget-23}"style="Text-decoration: none;color:#ffa500;">予算</a></button>
             <div sec:authorize="isAuthenticated()">
                 <form th:action="@{/logout}" method="post">
-                    <button type="submit"class="btn btn-primary"style="margin-right: 20px;color:#ffa500;background-color:#ffff93;border:2px solid #ffa500;">ログアウト</button>
+                    <button type="submit"class="btn btn-primary"style="margin-right: 20px;color:#ffa500;background-color:#ffff93;border:2px solid #ffa500; width: 100px; height: 70px;">ログアウト</button>
                 </form>
             </div>
         </ul>
