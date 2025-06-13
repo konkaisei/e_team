@@ -1,13 +1,16 @@
 .all{
     background-color: #ffefe0;
     max-height: fit-content;
-    margin: 20px 50px;
+    margin: 25px 50px;
     color: #ff4747;
     padding: 30px;
 }
 h2{
     margin-top: 30px;
     margin-bottom: 30px;
+    position: relative;/*相対位置*/
+    padding-left: 1.2em;/*アイコン分のスペース*/
+    line-height: 1.4;/*行高*/
 }
 .label{
     font-size: 20px;
@@ -27,4 +30,15 @@ button {
 }
 button:hover {
   background-color: #ffeaaa;
+}
+
+h2:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f1b0";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0;/*アイコンの位置*/
+  top: 0;/*アイコンの位置*/
+  color: #ff938b; /*アイコン色*/
 }
