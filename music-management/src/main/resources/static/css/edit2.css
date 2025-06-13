@@ -1,4 +1,3 @@
-
 .all{
     background-color: #ffffe0;
     max-height: fit-content;
@@ -20,10 +19,7 @@ margin: 20px;
 .design03 td {
  padding: 10px;
  border-bottom: solid 1px #85514B;
-}
-.design03 tr{
-    background-color:#ffffe0;
-}
+}  
 a{
     color: #FF4747;
     text-decoration: none;
@@ -38,9 +34,20 @@ a{
       padding: 10px 20px;
       text-align: center;
     } */
-button{
-    border: 2px solid#ffa500;
-    color:#ff4747;
-    text-align: center;
-    background-color:#ffffe0;
+.design03 button {
+  background-color: #ffffff;
+  border: 2px solid #ffa500;
+  color: #ff4747;
+  text-align: center;
+  padding: 5px 12px;
+  margin: 5px 0;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.design03 button:hover {
+  background-color: #ffeaaa;
+}
+.td1{
+    display: flex;
 }
