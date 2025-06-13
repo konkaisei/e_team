@@ -5,7 +5,8 @@
     color:#ff4747
 }
 .design03 {
-margin: 20px;
+ width: 70%;
+margin: 0 auto;
  max-width: fit-content;
  text-align: center;
  border-collapse: collapse;
@@ -24,16 +25,13 @@ a{
     color: #FF4747;
     text-decoration: none;
 }
-/* table {
-    padding-left: 500px;  
-    border-collapse: collapse;
-      margin: 30px 0;
-    }
-    th, td {
-      border: 2px solid#ffa500;
-      padding: 10px 20px;
-      text-align: center;
-    } */
+
+.design03 tr:nth-child(even) button {
+  background-color: #ffffe0;
+}
+.design03 tr:nth-child(even) button:hover {
+  background-color: #ffeaaa;
+}
 .design03 button {
   background-color: #ffffff;
   border: 2px solid #ffa500;
@@ -44,6 +42,10 @@ a{
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
+}
+.design03 td form {
+  display: inline-block;
+  margin: 0 5px;
 }
 .design03 button:hover {
   background-color: #ffeaaa;
