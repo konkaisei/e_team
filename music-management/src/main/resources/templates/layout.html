@@ -8,7 +8,7 @@
     </head>
     <body>
     <div th:fragment="header" style="margin-left: 0px;">
-        <header>
+        <header style="margin-top: 20px;">
         <ul style="left: 0px;display: flex;">
             <img th:src="@{/img/logo.png}"alt="ロゴ" style="width: 200px; height: 80px;left: 50%;margin-right: 30px;">
             <button sec:authorize="isAuthenticated()"class="btn btn-primary"style="background-color:#ffff93;border:2px solid #ffa500; width: 130px; height: 70px;"><a th:href="@{/albums}"style="Text-decoration: none;color:#ffa500;"><img th:src="@{/img/home.png}"alt="ホーム" style="width: 50px; height: 50px;margin-right: 10px;">ホーム</a></button>
