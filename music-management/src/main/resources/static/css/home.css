@@ -4,12 +4,33 @@
     margin: 20px 50px;
     color: #ff4747;
 }
+a{
+    color: #ff4747;
+    text-decoration: none;
+}
+.div1{
+    margin: 20px 20px;
+}
 .date{
-    margin: 20px 10px;
+    margin: 20px 20px;
 }
-table{
-    margin: 20px 10px;
+
+
+
+
+.design03 {
+margin: 20px;
+ max-width: fit-content;
+ text-align: center;
+ border-collapse: collapse;
+ border-spacing: 0;
+ border-top: solid 1px #85514b;
 }
-th{
-    text-align: center;
+.design03 tr:nth-child(2n+1) {
+ background: #ffffff;
+}
+.design03 th,
+.design03 td {
+ padding: 10px;
+ border-bottom: solid 1px #85514b;
 }
