@@ -34,6 +34,8 @@
         <div class="date">
             <h2 class="h2"><span id="current-month"></span>の収支</h2>
         </div>
+        <!-- グラフを表示するコンテナ -->
+        <div id="js-result"></div>
         <table class="design03">
             <thead>
                 <tr>
@@ -64,11 +66,16 @@
             </tbody>
         </table>
     </div>
+    <!-- Chart.jsライブラリの読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
         // 現在の月を取得
         const date = new Date();
         const month = date.getMonth() + 1; // 月は0から始まるため+1
         document.getElementById('current-month').textContent = month + "月";
+        
     </script>
+    <!-- Chart.jsライブラリの読み込み -->
+    <script th:src="@{/js/engurafu.js}"></script>
     </body>
 </html>
