@@ -8,6 +8,7 @@
     <body>
         <div th:replace="~{layout :: header}"></div>
         <div class="all">
+            <div class="div1">
         <h2>予算登録</h2>
         <form th:action="@{/albums/new}" th:object="${albumForm}" method="post">
             <div>
@@ -20,6 +21,7 @@
             </div> -->
             <button type="submit">登録</button>
         </form>
+            </div>
         </div>
     </body>
 </html>
