@@ -8,21 +8,21 @@
     <body>
         <div th:replace="~{layout :: header}"></div>
         <div class="all">
-        <h3>予算登録</h3>
+        <h2>予算登録</h2>
         <form th:action="@{/albums/new}" th:object="${albumForm}" method="post">
             <div>
-                <label for="title">タイトル</label>
+                <label for="title">メモ</label>
                 <input type="text" id="title" name="title" th:field="*{title}">
             </div>
             <div>
-                <label for="artist">アーティスト</label>
+                <label for="artist">金額</label>
                 <input type="text" id="artist" name="artist" th:field="*{artist}">
             </div>
             <div>
-                <label for="release-date">リリース日：</label>
+                <!-- <label for="release-date">リリース日：</label>
                 <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}">
-            </div>
-            <button type="submit">追加</button>
+            </div> -->
+            <button type="submit">登録</button>
         </form>
         </div>
     </body>
