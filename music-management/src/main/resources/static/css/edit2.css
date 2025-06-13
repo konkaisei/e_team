@@ -1,3 +1,8 @@
 th{
     color: green;
 }
+.all{
+    background-color: #ffffd6;
+    max-height: fit-content;
+    margin: 20px 50px;
+}
