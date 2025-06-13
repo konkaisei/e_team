@@ -4,9 +4,17 @@
     margin: 20px 50px;
     color:#ff4747
 }
+
+h2{
+    margin-top: 60px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    justify-content: center; 
+}
 .design03 {
  width: 70%;
-margin: 0 auto;
+ margin: 0 auto;
  max-width: fit-content;
  text-align: center;
  border-collapse: collapse;
