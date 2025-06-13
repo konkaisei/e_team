@@ -9,3 +9,22 @@ h2{
     margin-top: 30px;
     margin-bottom: 30px;
 }
+.label{
+    font-size: 20px;
+    margin: 10px;
+    font-weight: bold;
+}
+button {
+  background-color: #ffffff;
+  border: 2px solid #ffa500;
+  color: #ff4747;
+  text-align: center;
+  padding: 5px 12px;
+  margin: 5px 0;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ffeaaa;
+}

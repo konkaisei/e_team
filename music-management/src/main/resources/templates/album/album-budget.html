@@ -11,11 +11,11 @@
         <h2>予算登録</h2>
         <form th:action="@{/albums/new}" th:object="${albumForm}" method="post">
             <div>
-                <label for="title">メモ</label>
+                <label for="title"class="label">メモ</label>
                 <input type="text" id="title" name="title" th:field="*{title}">
             </div>
             <div>
-                <label for="artist">金額</label>
+                <label for="artist"class="label">金額</label>
                 <input type="text" id="artist" name="artist" th:field="*{artist}">
             </div>
             <div>
