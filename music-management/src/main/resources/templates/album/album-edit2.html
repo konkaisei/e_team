@@ -13,19 +13,34 @@
         <div>
             <div th:if="${error}" th:text="${error}" style="color:red">sample message</div>
         </div>
-        <table>
+        <table class="design03">
             <thead>
                 <tr>
                   <th>カテゴリ</th>
                   <th>金額</th>
+                  <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
+                <tr th:each="album : ${albums}">
+                    <td><span th:text="${album.albumId}">alb</span></td>
+                    <td><a th:href="@{/albums/{albumId}(albumId=${album.albumId})}"><span th:text="${album.title}">album title</span></a></td>
+                    <!-- <td><span th:text="${album.artist}">album artist</span></td>
+                    <td><span th:text="${album.releaseDate}">album releaseDate</span></td>
+                    <td><span th:text="${album.musicCount}">album musicCount</span></td> -->
+                    <td>
+                        <form th:action="@{/albums/{albumId}/edit(albumId=${album.albumId})}" method="get">
+                            <button type="submit">編集</button>
+                        </form>
+                        <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post">
+                            <button type="submit" onclick="return confirm('本当に削除しますか？　');">削除</button>
+                        </form>
+                    </td>
                 </tr>
             </tbody>
+         </table>
+
+             
             <!-- <tbody>
                 <tr th:each="album : ${albums}">
                     <td><span th:text="${album.albumId}">alb</span></td>
@@ -43,7 +58,9 @@
                     </td>
                 </tr>
             </tbody> -->
-        </table>
         </div>
     </body>
 </html>
+
+
+
