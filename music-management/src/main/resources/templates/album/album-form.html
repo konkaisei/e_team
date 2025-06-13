@@ -6,9 +6,16 @@
     </head>
      <body>
         <div th:replace="~{layout :: header}"></div>
-       
- <div style="margin: 20px auto;">
-    <div style="display: flex;width: 200px; height: 30px;text-align: center;color:#ffa500;">収入と支出の切替</div>       
+     
+     <div style="margin: 20px auto;">
+    <div style="display: flex;width: 200px; height: 30px;text-align: center;color:#ffa500;">収入と支出の切替</div>            
+    <select id="menu" name="menu"style="margin: 20px auto;display: flex;width: 200px; height: 30px;text-align: center;color:#ffa500;">
+        <div style="margin: 20px auto;">
+         <label for="menu"style="margin: 20px auto;display: flex;width: 200px; height: 30px;text-align: center;color:#ffa500;">収入と支出の切替を選択してください:</label>
+        <option value="option1">支出</option>
+        <option value="option2">収入</option>
+    </select>
+ 
 
        
         </div>
