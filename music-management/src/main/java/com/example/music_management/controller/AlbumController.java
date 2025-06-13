@@ -6,9 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.music_management.entity.Album;
 import com.example.music_management.form.AlbumForm;
+import com.example.music_management.form.IEForm;
 import com.example.music_management.form.MusicForm;
 import com.example.music_management.security.CustomUserDetails;
 import com.example.music_management.service.AlbumService;
+import com.example.music_management.service.IEService;
 import com.example.music_management.service.MusicService;
 import com.example.music_management.viewmodel.AlbumViewModel;
 import com.example.music_management.viewmodel.MusicViewModel;
@@ -31,9 +33,11 @@ import com.example.music_management.entity.Music;
 public class AlbumController {
     private final AlbumService albumService;
     private final MusicService musicService;
-    public AlbumController(AlbumService albumService,MusicService musicService){
+    private final IEService ieService;
+    public AlbumController(AlbumService albumService,MusicService musicService,IEService ieService){
         this.albumService = albumService;
         this.musicService = musicService;
+        this.ieService = ieService;
     }
 
     @GetMapping("/new")
@@ -42,6 +46,12 @@ public class AlbumController {
         model.addAttribute("albumForm", albumForm);
         return "album/album-form";
     }
+    @PostMapping("/new")
+    public String createIE(IEForm ieForm, @AuthenticationPrincipal CustomUserDetails customUserDetails) {
+    long userId = customUserDetails.getUserId();
+    ieService.createIE(ieForm, userId);
+    return "redirect:/albums";
+    }
 
     @GetMapping
     public String listAlbums(Model model) {
@@ -49,15 +59,16 @@ public class AlbumController {
         List<AlbumViewModel> albums = albumService.getAllAlbumsWithMusicCount();
         model.addAttribute("albums", albums);
         return "album/album-list"; 
-}   
+    }   
 
-    @PostMapping("/new")
-    public String createAlbum(AlbumForm albumForm/* , Model model*/) {
-        albumService.createAlbum(albumForm);
+    /*@PostMapping("/new")
+    public String createAlbum(AlbumForm albumForm/* , Model model*///) {
+        //albumService.createAlbum(albumForm);
         //List<Album> albums = albumService.getAllAlbums();
         //model.addAttribute("albums", albums);
-        return "redirect:/albums";
-    }
+    //    return "redirect:/albums";
+    //}
+    
     @GetMapping("/{albumId}")
     public String album(@PathVariable long albumId,
                         Model model,

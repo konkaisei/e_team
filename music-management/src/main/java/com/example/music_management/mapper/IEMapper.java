@@ -1,0 +1,26 @@
+package com.example.music_management.mapper;
+
+import com.example.music_management.entity.IE;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Select;
+@Mapper
+public interface IEMapper {
+
+  @Select("select * from incomeExpense where user_id = #{userId}")
+    List<IE> selectAllIE(long userId);
+
+    @Select("select sum(amount) from incomeExpense where type = 0 and user_id = #{userId}")
+    Integer selectIncomeSum(long userId);
+
+    @Select("select sum(amount) from incomeExpense where type = 1 and user_id = #{userId}")
+    Integer selectExpenseSum(long userId);
+
+    @Insert("insert into incomeExpense (type, amount, memo, user_id) values (#{type}, #{amount}, #{memo}, #{userId})")
+    @Options(useGeneratedKeys = true, keyProperty = "ieId")
+    void insertIE(IE ie);
+}
