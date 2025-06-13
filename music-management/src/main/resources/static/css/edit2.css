@@ -5,3 +5,42 @@
     margin: 20px 50px;
     color:#ff4747
 }
+.design03 {
+margin: 20px;
+ max-width: fit-content;
+ text-align: center;
+ border-collapse: collapse;
+ border-spacing: 0;
+ border-top: solid 1px #85514B;
+}
+.design03 tr:nth-child(2n+1) {
+ background: #FFFFFF;
+}
+.design03 th,
+.design03 td {
+ padding: 10px;
+ border-bottom: solid 1px #85514B;
+}
+.design03 tr{
+    background-color:#ffffe0;
+}
+a{
+    color: #FF4747;
+    text-decoration: none;
+}
+/* table {
+    padding-left: 500px;  
+    border-collapse: collapse;
+      margin: 30px 0;
+    }
+    th, td {
+      border: 2px solid#ffa500;
+      padding: 10px 20px;
+      text-align: center;
+    } */
+button{
+    border: 2px solid#ffa500;
+    color:#ff4747;
+    text-align: center;
+    background-color:#ffffe0;
+}
