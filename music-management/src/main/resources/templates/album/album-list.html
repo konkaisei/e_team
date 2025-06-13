@@ -2,16 +2,19 @@
 <html lang ="ja" xmlns:th="http://www.thymeleaf.org">
     <head th:replace="~{layout :: head(アルバム一覧, ~{::links})}">
         <th:block th:fragment="links">
+            <link rel="stylesheet" th:href="@{/css/home.css}">
         </th:block>
     </head>
     <body>
         <div th:replace="~{layout :: header}"></div>
+        <div class="all">
         <div style="display: flex;  align-items: center;">
             <div style="display: flex;">
                 <form th:action="@{/budget}" method="get">
-                    <h3 style="display: inline-block;margin-right: 20px">今月の予算</h3>
-                    <input type="text">
-                    <button type="submit"class="btn btn-primary"style="margin-right: 20px;color:#ffa500;background-color:#ffff93;border:2px solid #ffa500;">設定</button>
+                    <div style="display: flex;">
+                        <h3 style="margin-right: 20px">今月の予算</h3>
+                        <h3>90,000</h3>
+                    </div>
                 </form>
             </div>
             <div style="display: flex;">
@@ -53,5 +56,6 @@
             </tbody>
         </table> -->
         <!-- aa -->
+    </div>
     </body>
 </html>
