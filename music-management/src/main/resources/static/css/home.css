@@ -77,4 +77,13 @@ img{
 } */
 .h2{
     margin-bottom: 20px;
+    margin-left: 220px;
+}
+#js-result{
+  width: 270px;
+  height: 270px;
+  margin: 0px 150px;
+}
+.all2{
+  display: flex;
 }
