@@ -3,4 +3,9 @@
     max-height: fit-content;
     margin: 20px 50px;
     color: #ff4747;
+    padding: 30px;
+}
+h2{
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
