@@ -9,15 +9,15 @@
         <div th:replace="~{layout :: header}"></div>
         <div class="all">
         <div style="display: flex;  align-items: center;">
-            <div style="display: flex;">
+            <div style="display: flex; margin: 20px 10px;">
                 <form th:action="@{/budget}" method="get">
                     <div style="display: flex;">
                         <h3 style="margin-right: 20px">今月の予算</h3>
-                        <h3>90,000</h3>
+                        <h3 style="margin-right: 20px">90,000</h3>
                     </div>
                 </form>
             </div>
-            <div style="display: flex;">
+            <div style="display: flex;margin: 20px 10px;">
                 <h3 style="margin-right: 20px;">今月の支出</h3>
                 <h3>90,000</h3>
             </div>
@@ -25,16 +25,18 @@
         <div>
             <div th:if="${error}" th:text="${error}" style="color:red">sample message</div>
         </div>
-        <h2>〇月の支出</h2>
-        <!-- <table>
+        <div class="date">
+            <h2><span id="current-month"></span>の収支</h2>
+        </div>
+        <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>タイトル</th>
-                    <th>アーティスト</th>
-                    <th>リリース日</th>
+                    <th>収入・支出</th>
+                    <th>メモ</th>
+                    <th>金額</th>
+                    <!-- <th>リリース日</th>
                     <th>曲数</th>
-                    <th></th>
+                    <th></th> -->
                 </tr>
             </thead>
             <tbody>
@@ -42,20 +44,25 @@
                     <td><span th:text="${album.albumId}">album id</span></td>
                     <td><a th:href="@{/albums/{albumId}(albumId=${album.albumId})}"><span th:text="${album.title}">album title</span></a></td>
                     <td><span th:text="${album.artist}">album artist</span></td>
-                    <td><span th:text="${album.releaseDate}">album releaseDate</span></td>
-                    <td><span th:text="${album.musicCount}">album musicCount</span></td>
-                    <td>
+                    <!-- <td><span th:text="${album.releaseDate}">album releaseDate</span></td>
+                    <td><span th:text="${album.musicCount}">album musicCount</span></td> -->
+                    <!-- <td>
                         <form th:action="@{/albums/{albumId}/edit(albumId=${album.albumId})}" method="get">
                             <button type="submit">編集</button>
                         </form>
                         <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post">
                             <button type="submit" onclick="return confirm('本当に削除しますか？　');">削除</button>
                         </form>
-                    </td>
+                    </td> -->
                 </tr>
             </tbody>
-        </table> -->
-        <!-- aa -->
+        </table>
     </div>
+        <script>
+        // 現在の月を取得
+        const date = new Date();
+        const month = date.getMonth() + 1; // 月は0から始まるため+1
+        document.getElementById('current-month').textContent = month + "月";
+    </script>
     </body>
 </html>

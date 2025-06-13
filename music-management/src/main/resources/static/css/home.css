@@ -2,5 +2,14 @@
     background-color: #ffffe0;
     max-height: fit-content;
     margin: 20px 50px;
-    color: #ff5151;
+    color: #ff4747;
+}
+.date{
+    margin: 20px 10px;
+}
+table{
+    margin: 20px 10px;
+}
+th{
+    text-align: center;
 }
