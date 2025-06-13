@@ -20,7 +20,7 @@ public interface IEMapper {
     @Select("select sum(amount) from incomeExpense where type = 1 and user_id = #{userId}")
     Integer selectExpenseSum(long userId);
 
-    @Insert("insert into incomeExpense (type, amount, memo, user_id) values (#{type}, #{amount}, #{memo}, #{userId})")
+    @Insert("insert into incomeExpense (type, amount, category, user_id) values (#{type}, #{amount}, #{category}, #{userId})")
     @Options(useGeneratedKeys = true, keyProperty = "ieId")
     void insertIE(IE ie);
 }

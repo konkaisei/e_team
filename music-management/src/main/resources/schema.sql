@@ -60,3 +60,12 @@ CREATE TABLE budgets (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
+create table incomeExpense (
+    IE_id integer auto_increment primary key,
+    type integer default 0,
+    check(type in(0, 1)),
+    amount integer,
+    category varchar(255),
+    user_id integer not null,
+    foreign key (user_id) references users(user_id)
+);

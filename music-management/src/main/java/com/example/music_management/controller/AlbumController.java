@@ -34,6 +34,7 @@ public class AlbumController {
     private final AlbumService albumService;
     private final MusicService musicService;
     private final IEService ieService;
+    
     public AlbumController(AlbumService albumService,MusicService musicService,IEService ieService){
         this.albumService = albumService;
         this.musicService = musicService;
@@ -48,9 +49,9 @@ public class AlbumController {
     }
     @PostMapping("/new")
     public String createIE(IEForm ieForm, @AuthenticationPrincipal CustomUserDetails customUserDetails) {
-    long userId = customUserDetails.getUserId();
-    ieService.createIE(ieForm, userId);
-    return "redirect:/albums";
+        long userId = customUserDetails.getUserId();
+        ieService.createIE(ieForm, userId);
+        return "redirect:/albums";
     }
 
     @GetMapping
