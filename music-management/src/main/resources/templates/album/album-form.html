@@ -2,11 +2,12 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
     <head th:replace="~{layout :: head(アルバム一覧, ~{::links})}">
         <th:block th:fragment="links">
+            <link rel="stylesheet" th:href="@{/css/add.css}">
         </th:block>
     </head>
      <body>
         <div th:replace="~{layout :: header}"></div>
-     
+     <div class="all">
      <div style="margin: 20px auto;">
     <div style="display: flex;width: 200px; height: 30px;text-align: center;color:#ffa500;">収入と支出の切替</div>            
     <select id="menu" name="menu"style="margin: 20px auto;display: flex;width: 200px; height: 30px;text-align: center;color:#ffa500;">
@@ -41,5 +42,6 @@
             </div>
             <button type="submit">追加</button>
         </form> -->
+    </div>
     </body>
 </html> 

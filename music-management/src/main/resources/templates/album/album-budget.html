@@ -2,10 +2,12 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
     <head th:replace="~{layout :: head(アルバム一覧, ~{::links})}">
         <th:block th:fragment="links">
+            <link rel="stylesheet" th:href="@{/css/budget.css}">
         </th:block>
     </head>
     <body>
         <div th:replace="~{layout :: header}"></div>
+        <div class="all">
         <h3>予算登録</h3>
         <form th:action="@{/albums/new}" th:object="${albumForm}" method="post">
             <div>
@@ -22,5 +24,6 @@
             </div>
             <button type="submit">追加</button>
         </form>
+        </div>
     </body>
 </html>
