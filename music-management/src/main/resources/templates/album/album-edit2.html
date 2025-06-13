@@ -2,11 +2,12 @@
 <html lang ="ja" xmlns:th="http://www.thymeleaf.org">
     <head th:replace="~{layout :: head(アルバム一覧, ~{::links})}">
         <th:block th:fragment="links">
-          <link rel="stylesheet" th:href="@{/css/detail.css}">
+          <link rel="stylesheet" th:href="@{/css/edit2.css}">
         </th:block>
     </head>
     <body>
         <div th:replace="~{layout :: header}"></div>
+        <div class = "all">
         <div style="display: flex;  align-items: center;">
         </div>
         <div>
@@ -15,17 +16,19 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>タイトル</th>
-                    <th>アーティスト</th>
-                    <th>リリース日</th>
-                    <th>曲数</th>
-                    <th></th>
+                  <th>カテゴリ</th>
+                  <th>金額</th>
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <!-- <tbody>
                 <tr th:each="album : ${albums}">
-                    <td><span th:text="${album.albumId}">album id</span></td>
+                    <td><span th:text="${album.albumId}">alb</span></td>
                     <td><a th:href="@{/albums/{albumId}(albumId=${album.albumId})}"><span th:text="${album.title}">album title</span></a></td>
                     <td><span th:text="${album.artist}">album artist</span></td>
                     <td><span th:text="${album.releaseDate}">album releaseDate</span></td>
@@ -39,7 +42,8 @@
                         </form>
                     </td>
                 </tr>
-            </tbody>
+            </tbody> -->
         </table>
+        </div>
     </body>
 </html>
