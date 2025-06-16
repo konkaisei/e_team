@@ -5,27 +5,31 @@
             <link rel="stylesheet" th:href="@{/css/add.css}">
         </th:block>
     </head>
-     <body>
+    <body>
         <div th:replace="~{layout :: header}"></div>
      <div class="all">
+        <div id="container"></div>
      <div class="div1">
+    <!-- <img th:src="@{/img/cat1.png}" class="cat1" alt="猫１"> -->
+     <script type="text/javascript">
+        var imglist = new Array(
+            "/img/cat1.png",
+            "/img/cat2.png",
+            "/img/cat3.png",
+            "/img/cat4.png",
+            "/img/cat5.png",
+            "/img/cat6.png",
+            "/img/cat7.png",
+            "/img/cat8.png",
+            "/img/cat9.png",
+            "/img/cat10.png"
+        );
+        var selectnum = Math.floor(Math.random() * imglist.length);
+        var output = "<img src=" + imglist[selectnum] + " class='cat1'>";
+        document.write(output);
+    </script>
+    <div>
     <h2>収入と支出の追加</h2>            
-    <!-- <select id="menu" name="menu"style="margin: 20px auto;display: flex;width: 200px; height: 30px;text-align: center;color:#ffa500;">
-        <div style="margin: 20px auto;">
-         <label for="menu"style="margin: 20px auto;display: flex;width: 200px; height: 30px;text-align: center;color:#ffa500;">収入と支出の切替を選択してください:</label>
-        <option value="option1">支出</option>
-        <option value="option2">収入</option>
-    </select>
-  -->
-
-       
-        <!-- </div>
-           <div style="background-color:#ffff93;border:2px solid #ffa500; width: 200px; height: 50px;text-align: center;">金額</div>
-           <div>
-             <input style="border:2px solid #ffa500; width: 200px; height: 50px;">
-            </div>
-            <button type="submit"style="margin-top:20px;color:#ffa500;background-color:#ffff93;border:2px solid #ffa500;">追加</button>
-        </div> -->
         
         <form th:action="@{/albums/new}" th:object="${IEForm}" method="post">
             <fieldset class="radio-2">
@@ -46,12 +50,26 @@
                 <label for="amount"class="label">金額</label>
                 <input type="text" id="amount" name="amount" th:field="*{amount}">
             </div>
-            <!-- <div>
-                <label for="release-date">リリース日：</label>
-                <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}">
-            </div> -->
             <button type="submit">追加</button>
         </form>
+    </div>
+    <!-- <img th:src="@{/img/cat2.png}" class="cat2" alt="猫2"> -->
+          <script type="text/javascript">
+        var imglist = new Array(
+            "/img/cat1.png",
+            "/img/cat2.png",
+            "/img/cat3.png",
+            "/img/cat4.png",
+            "/img/cat5.png",
+            "/img/cat6.png",
+            "/img/cat7.png",
+            "/img/cat8.png",
+            "/img/cat9.png",
+            "/img/cat10.png");
+        var selectnum = Math.floor(Math.random() * imglist.length);
+        var output = "<img src=" + imglist[selectnum] + " class='cat2'>";
+        document.write(output);
+    </script>
     </div>
     </body>
 </html> 
