@@ -27,12 +27,7 @@ public class BudgetController {
           return "album/album-list";
      }
 
-     @GetMapping("/detail")
-     public String detailForm(Model model) {
-          List<AlbumViewModel> albums = albumService.getAllAlbumsWithMusicCount();
-          model.addAttribute("albums", albums);
-          return "album/album-edit2";
-     }
+     
 
      @GetMapping("/budget-23")
      public String albumForm(Model model) {

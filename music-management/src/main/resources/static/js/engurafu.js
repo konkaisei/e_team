@@ -10,10 +10,10 @@
     const doughnutChart = new Chart(createCanvas(), {
     type: "doughnut",
     data: {
-    labels: ["Red", "Blue", "Yellow"],
+    labels: ["Red", "Blue"],
     datasets: [{
-        data: [300, 50, 100],
-        backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"],
+        data: [300, 50],
+        backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)"],
     }],
     },
     options: {

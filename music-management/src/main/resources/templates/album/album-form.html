@@ -34,11 +34,11 @@
         <form th:action="@{/albums/new}" th:object="${IEForm}" method="post">
             <fieldset class="radio-2">
                 <label>
-                    <input type="radio" name="radio-2" checked/>
+                    <input type="radio" name="type" value="0" checked/>
                     収入
                 </label>
                 <label>
-                    <input type="radio" name="radio-2"/>
+                    <input type="radio" name="type" value="1"/>
                     支出
                 </label>
             </fieldset>

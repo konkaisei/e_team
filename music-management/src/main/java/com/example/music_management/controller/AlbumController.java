@@ -51,7 +51,7 @@ public class AlbumController {
     public String createIE(IEForm ieForm, @AuthenticationPrincipal CustomUserDetails customUserDetails) {
         long userId = customUserDetails.getUserId();
         ieService.createIE(ieForm, userId);
-        return "redirect:/albums";
+        return "redirect:/albums/ie";
     }
 
     @GetMapping
@@ -137,6 +137,28 @@ public class AlbumController {
         return "album/album-list"; 
     }   
 
+    @GetMapping("/detail")
+    public String ListIE2(Model model,@AuthenticationPrincipal CustomUserDetails userDetails) {
+        List<IE> ie = ieService.getAllIEWithMusicCount(userDetails.getUserId());
+        model.addAttribute("IE", ie);
+        return "album/album-edit2"; 
+    }
+    @PostMapping("/{albumId}/musics/{musicId}/delete")
+    public String deleteIE(@PathVariable long albumId,@PathVariable long musicId) {
+        musicService.deleteMusic(musicId);
+        
+        return "redirect:/albums/" + albumId;
+    }
     
-    
+    @GetMapping("/{albumId}/musics/{musicId}/edit")
+    public String editIE(@PathVariable long albumId, @PathVariable long musicId, Model model) {
+        Music music = musicService.getMusicById(musicId);
+        model.addAttribute("music", music);
+        return "music/music-edit";
+    }
+    @PostMapping("/{albumId}/musics/{musicId}/edit")
+    public String update(@PathVariable long albumId, @PathVariable long musicId, Music music) {
+        musicService.updateMusic(musicId, music);
+        return "redirect:/albums/" + albumId;
+    }
 }
