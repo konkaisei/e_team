@@ -48,14 +48,14 @@
                     <td th:if="${album.type==1}"><span th:text="支出">album id</span></td>
                     <td><span th:text="${album.category}">album title</span></a></td>
                     <td><span th:text="${album.amount}">album artist</span></td>
-                    <!-- <td>
-                        <form th:action="@{/albums/{albumId}/edit(albumId=${album.albumId})}" method="get">
+                    <td>
+                        <form th:action="@{/detail/delete}" method="get">
                             <button type="submit">編集</button>
                         </form>
-                        <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post">
+                        <form th:action="@{/albums/detail/delete}" method="post">
                             <button type="submit" onclick="return confirm('本当に削除しますか？　');">削除</button>
                         </form>
-                    </td> -->
+                    </td>
 
                 </tr>
             </tbody>

@@ -39,6 +39,10 @@ public class IEService {
     ieRepository.insertIE(ie);
   }
   public List<IE> getAllIEWithMusicCount(long userId) {
-	 return ieRepository.getAllIEWithMusicCount(userId);
+	  return ieRepository.getAllIEWithMusicCount(userId);
+  }
+
+  public void deleteIE(long ieId){
+    ieRepository.deleteIEById(ieId);
   }
 }

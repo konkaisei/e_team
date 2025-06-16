@@ -20,6 +20,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import com.example.music_management.entity.Music;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -142,6 +144,12 @@ public class AlbumController {
         List<IE> ie = ieService.getAllIEWithMusicCount(userDetails.getUserId());
         model.addAttribute("IE", ie);
         return "album/album-edit2"; 
+    }
+    
+    @PostMapping("/detail/delete")
+    public String deleteIE(long ieId) {
+        ieService.deleteIE(ieId);
+        return "redirect:/album-edit2";
     }
     
 }

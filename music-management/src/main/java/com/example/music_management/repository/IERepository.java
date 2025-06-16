@@ -33,4 +33,8 @@ public class IERepository {
   public List<IE> getAllIEWithMusicCount(long userId){
         return ieMapper.selectAllIEWithMusicCount(userId);
   }
+
+  public void deleteIEById(long ieId){
+    ieMapper.deleteIEById(ieId);
+  }
 }
