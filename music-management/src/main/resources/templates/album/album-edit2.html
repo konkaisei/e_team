@@ -30,7 +30,7 @@
                     <td><span th:text="${album.artist}">album artist</span></td>
                     <!-- <td><span th:text="${album.releaseDate}">album releaseDate</span></td>
                     <td><span th:text="${album.musicCount}">album musicCount</span></td> -->
-                    <td class="td1">
+                    <td>
                         <form th:action="@{/albums/{albumId}/edit(albumId=${album.albumId})}" method="get">
                             <button type="submit">編集</button>
                         </form>
