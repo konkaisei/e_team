@@ -1,4 +1,4 @@
-CREATE TABLE albums(
+CREATE TABLE IF NOT EXISTS albums(
     album_id INTEGER AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     artist VARCHAR(255),
@@ -6,7 +6,7 @@ CREATE TABLE albums(
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE musics(
+CREATE TABLE IF NOT EXISTS musics(
     music_id INTEGER AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     duration TIME,
@@ -15,14 +15,14 @@ CREATE TABLE musics(
     FOREIGN KEY (album_id) REFERENCES albums(album_id) ON DELETE CASCADE
 );
 
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
     user_id INTEGER AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) UNIQUE NOT NULL,
     password VARCHAR(60) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE favorites (
+CREATE TABLE IF NOT EXISTS favorites (
     user_id INTEGER NOT NULL,
     music_id INTEGER NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -32,7 +32,7 @@ CREATE TABLE favorites (
 );
 
 --　schema.sqlに以下を追加
-CREATE TABLE incomes (
+CREATE TABLE IF NOT EXISTS incomes (
     income_id INTEGER AUTO_INCREMENT PRIMARY KEY,
     user_id INTEGER,
     income_date DATE,
@@ -42,7 +42,7 @@ CREATE TABLE incomes (
 );
 
 
-CREATE TABLE expenditures (
+CREATE TABLE IF NOT EXISTS expenditures (
     expenditure_id INTEGER AUTO_INCREMENT PRIMARY KEY,
     user_id INTEGER,
     expenditure_date DATE,
@@ -51,7 +51,7 @@ CREATE TABLE expenditures (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
-CREATE TABLE budgets (
+CREATE TABLE IF NOT EXISTS budgets (
     budget_id INTEGER AUTO_INCREMENT PRIMARY KEY,
     user_id INTEGER,
     budget_date DATE,
@@ -60,7 +60,7 @@ CREATE TABLE budgets (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
-create table incomeExpense (
+create table IF NOT EXISTS incomeExpense (
     IE_id integer auto_increment primary key,
     type integer default 0,
     check(type in(0, 1)),
