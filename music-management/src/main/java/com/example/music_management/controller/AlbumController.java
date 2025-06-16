@@ -143,22 +143,5 @@ public class AlbumController {
         model.addAttribute("IE", ie);
         return "album/album-edit2"; 
     }
-    @PostMapping("/{albumId}/musics/{musicId}/delete")
-    public String deleteIE(@PathVariable long albumId,@PathVariable long musicId) {
-        musicService.deleteMusic(musicId);
-        
-        return "redirect:/albums/" + albumId;
-    }
     
-    @GetMapping("/{albumId}/musics/{musicId}/edit")
-    public String editIE(@PathVariable long albumId, @PathVariable long musicId, Model model) {
-        Music music = musicService.getMusicById(musicId);
-        model.addAttribute("music", music);
-        return "music/music-edit";
-    }
-    @PostMapping("/{albumId}/musics/{musicId}/edit")
-    public String update(@PathVariable long albumId, @PathVariable long musicId, Music music) {
-        musicService.updateMusic(musicId, music);
-        return "redirect:/albums/" + albumId;
-    }
 }
