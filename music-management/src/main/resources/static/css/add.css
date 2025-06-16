@@ -8,9 +8,7 @@
 h2{
     margin-top: 30px;
     margin-bottom: 30px;
-    position: relative;/*相対位置*/
-    padding-left: 1.2em;/*アイコン分のスペース*/
-    line-height: 1.4;/*行高*/
+
 }
 .div1{
     margin: 0 auto;
@@ -18,9 +16,10 @@ h2{
     text-align: center;
 }
 .label{
-    font-size: 20px;
+    font-size: 22px;
     margin: 10px;
     font-weight: bold;
+    text-align: center;
 }
 button {
   background-color: #ffffff;
@@ -37,13 +36,62 @@ button:hover {
   background-color: #ffeaaa;
 }
 
-h2:before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f1b0";/*アイコンのユニコード*/
-  font-weight: 900;
-  position: absolute;/*絶対位置*/
-  font-size: 1em;/*サイズ*/
-  left: 0;/*アイコンの位置*/
-  top: 0;/*アイコンの位置*/
-  color: #ff938b; /*アイコン色*/
+.radio-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3em 2em;
+    border: none;
+}
+
+.radio-2 label {
+    display: flex;
+    align-items: center;
+    gap: 0 .5em;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.radio-2 label::before,
+.radio-2 label::after {
+    border-radius: 50%;
+    content: '';
+}
+
+.radio-2 label::before {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ebdee4;
+    box-sizing: border-box;
+}
+
+.radio-2 label::after {
+    position: absolute;
+    top: 50%;
+    left: 9px;
+    transform: translate(-50%, -50%);
+    width: 9px;
+    height: 9px;
+    background-color: #ebdee3;
+}
+
+.radio-2 label:has(:checked)::after {
+    background-color: #d02550;
+    animation: anim-radio-2 .3s linear;
+}
+
+@keyframes anim-radio-2 {
+    0% {
+        box-shadow: 0 0 0 1px transparent;
+    }
+    50% {
+        box-shadow: 0 0 0 10px #d0256733;
+    }
+    100% {
+        box-shadow: 0 0 0 10px transparent;
+    }
+}
+
+.radio-2 input {
+    display: none;
 }
