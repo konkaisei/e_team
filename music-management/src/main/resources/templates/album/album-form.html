@@ -10,7 +10,15 @@
      <div class="all">
         <div id="container"></div>
      <div class="div1">
-    <img th:src="@{/img/cat1.png}" class="cat1" alt="猫１">
+    <!-- <img th:src="@{/img/cat1.png}" class="cat1" alt="猫１"> -->
+     <script type="text/javascript">
+        var imglist = new Array(
+            "/img/cat1.png",
+            "/img/cat2.png");
+        var selectnum = Math.floor(Math.random() * imglist.length);
+        var output = "<img src=" + imglist[selectnum] + " class='cat1'>";
+        document.write(output);
+    </script>
     <div>
     <h2>収入と支出の追加</h2>            
         
@@ -36,7 +44,15 @@
             <button type="submit">追加</button>
         </form>
     </div>
-    <img th:src="@{/img/cat2.png}" class="cat2" alt="猫2">
+    <!-- <img th:src="@{/img/cat2.png}" class="cat2" alt="猫2"> -->
+          <script type="text/javascript">
+        var imglist = new Array(
+            "/img/cat1.png",
+            "/img/cat2.png");
+        var selectnum = Math.floor(Math.random() * imglist.length);
+        var output = "<img src=" + imglist[selectnum] + " class='cat2'>";
+        document.write(output);
+    </script>
     </div>
     </body>
 </html> 
