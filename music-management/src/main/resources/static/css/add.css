@@ -4,15 +4,25 @@
     margin: 25px 50px;
     color: #ff4747;
     padding: 30px;
+    
 }
+/* .all2{
+    background: url(../img/logo.png);
+    background-size: cover;
+    opacity: 0.2;
+    z-index: 999;
+} */
 h2{
     margin-top: 30px;
     margin-bottom: 30px;
 }
 .div1{
+  display: flex;
     margin: 0 auto;
     max-width: fit-content;
     text-align: center;
+    opacity: 1;
+    z-index: 1;
 }
 /* ラベル */
 .label{
@@ -116,4 +126,16 @@ h2:after {
   border-style: solid;
   border-color: #fff #fff #ffa8b7;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+.cat1{
+  width: 300px;
+  height: 300px;
+  opacity: 0.3;
+  margin-right: 100px;
+}
+.cat2{
+  width: 300px;
+  height: 300px;
+  opacity: 0.3;
+  margin-left: 100px;
 }
