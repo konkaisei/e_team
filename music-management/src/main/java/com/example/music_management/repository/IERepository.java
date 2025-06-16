@@ -1,7 +1,8 @@
 package com.example.music_management.repository;
-
 import com.example.music_management.entity.IE;
 import com.example.music_management.mapper.IEMapper;
+//import com.example.music_management.viewmodel.AlbumViewModel;
+
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -28,5 +29,8 @@ public class IERepository {
   
   public void insertIE(IE ie) {
     ieMapper.insertIE(ie);
+  }
+  public List<IE> getAllIEWithMusicCount(long userId){
+        return ieMapper.selectAllIEWithMusicCount(userId);
   }
 }

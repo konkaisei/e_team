@@ -3,6 +3,7 @@ package com.example.music_management.service;
 import com.example.music_management.entity.IE;
 import com.example.music_management.form.IEForm;
 import com.example.music_management.repository.IERepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,5 +37,8 @@ public class IEService {
     ie.setUserId(userId);
 
     ieRepository.insertIE(ie);
+  }
+  public List<IE> getAllIEWithMusicCount(long userId) {
+	 return ieRepository.getAllIEWithMusicCount(userId);
   }
 }

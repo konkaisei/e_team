@@ -49,10 +49,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="album : ${albums}">
-                    <td><span th:text="${album.albumId}">album id</span></td>
-                    <td><a th:href="@{/albums/{albumId}(albumId=${album.albumId})}"><span th:text="${album.title}">album title</span></a></td>
-                    <td><span th:text="${album.artist}">album artist</span></td>
+                <tr th:each="album : ${IE}">
+                    <td><span th:text="${album.ieId}">album id</span></td>
+                    <td><a th:href="@{/albums/{albumId}(albumId=${album.albumId})}"><span th:text="${album.category}">album title</span></a></td>
+                    <td><span th:text="${album.amount}">album artist</span></td>
                     <!-- <td><span th:text="${album.releaseDate}">album releaseDate</span></td>
                     <td><span th:text="${album.musicCount}">album musicCount</span></td> -->
                     <!-- <td>

@@ -1,5 +1,4 @@
 package com.example.music_management.mapper;
-
 import com.example.music_management.entity.IE;
 
 import java.util.List;
@@ -23,4 +22,7 @@ public interface IEMapper {
     @Insert("insert into incomeExpense (type, amount, category, user_id) values (#{type}, #{amount}, #{category}, #{userId})")
     @Options(useGeneratedKeys = true, keyProperty = "ieId")
     void insertIE(IE ie);
+    
+    @Select("select * from incomeExpense where user_id = #{userId}")
+    public List<IE> selectAllIEWithMusicCount(long userId);
 }

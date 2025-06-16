@@ -5,7 +5,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.music_management.entity.Album;
-import com.example.music_management.form.AlbumForm;
+import com.example.music_management.entity.IE;
 import com.example.music_management.form.IEForm;
 import com.example.music_management.form.MusicForm;
 import com.example.music_management.security.CustomUserDetails;
@@ -43,8 +43,8 @@ public class AlbumController {
 
     @GetMapping("/new")
     public String albumForm(Model model) {
-        AlbumForm albumForm = new AlbumForm();
-        model.addAttribute("albumForm", albumForm);
+        IEForm ieForm = new IEForm();
+        model.addAttribute("IEForm", ieForm);
         return "album/album-form";
     }
     @PostMapping("/new")
@@ -130,7 +130,12 @@ public class AlbumController {
         musicService.updateMusic(musicId, music);
         return "redirect:/albums/" + albumId;
     }
-
+    @GetMapping("/ie")
+    public String ListIE(Model model,@AuthenticationPrincipal CustomUserDetails userDetails) {
+        List<IE> ie = ieService.getAllIEWithMusicCount(userDetails.getUserId());
+        model.addAttribute("IE", ie);
+        return "album/album-list"; 
+    }   
 
     
     
