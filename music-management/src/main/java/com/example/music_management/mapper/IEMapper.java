@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface IEMapper {
 
@@ -29,4 +30,10 @@ public interface IEMapper {
 
     @Delete("DELETE FROM incomeExpense WHERE IE_id = #{ieId}")
     void deleteIEById(long ieId);
+
+    @Select("select * from incomeExpense where IE_id = #{ieId}")
+    IE selectIEById(long ieId);
+
+    @Update("update incomeExpense set type = #{type}, amount = #{amount}, memo = #{memo} where IE_id = #{ieId}")
+    void updateIE(IE ie);
 }

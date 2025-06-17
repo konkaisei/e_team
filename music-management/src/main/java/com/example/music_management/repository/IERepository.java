@@ -37,4 +37,12 @@ public class IERepository {
   public void deleteIEById(long ieId){
     ieMapper.deleteIEById(ieId);
   }
+  
+  public IE selectIEById(long ieId) {
+    return ieMapper.selectIEById(ieId);
+  }
+
+  public void updateIE(IE ie) {
+    ieMapper.updateIE(ie);
+  }
 }

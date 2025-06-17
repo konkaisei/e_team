@@ -45,4 +45,14 @@ public class IEService {
   public void deleteIE(long ieId){
     ieRepository.deleteIEById(ieId);
   }
+  public IE selectIEById(long ieId) {
+    return ieRepository.selectIEById(ieId);
+  }
+  
+  public void updateIE(long ieId, IE ie) {
+    if (ieId != ie.getIeId()) {
+      throw new IllegalArgumentException("not match");
+    }
+    ieRepository.updateIE(ie);
+  }
 }
