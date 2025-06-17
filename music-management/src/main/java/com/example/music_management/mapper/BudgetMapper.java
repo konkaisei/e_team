@@ -17,4 +17,7 @@ public interface BudgetMapper {
    @Insert("INSERT INTO albums (title, artist, release_date) VALUES (#{title}, #{artist}, #{releaseDate})")
    @Options(useGeneratedKeys = true, keyProperty = "albumId")
    void insertBudget(Budget budget);
+   //ホーム画面　予算の金額表示
+   @Select("select budget_amount from budgets where user_id = #{userId}")
+   Integer selectBudgetAmount(long userId);
 }

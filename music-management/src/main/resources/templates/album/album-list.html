@@ -49,7 +49,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="album : ${IE}">
+                <tr th:each="album : ${IEList}">
                     <td th:if="${album.type==0}"><span th:text="収入">album id</span></td>
                     <td th:if="${album.type==1}"><span th:text="支出">album id</span></td>
                     <td><span th:text="${album.category}">album title</span></a></td>
@@ -79,6 +79,11 @@
         
     </script>
     <!-- Chart.jsライブラリの読み込み -->
+     <script th:inline = "javascript">
+        const incomeSum = /*[[${incomeSum}]]*/ 0;
+        const expenseSum = /*[[${expenseSum}]]*/ 0;
+        const chartData = [incomeSum,expenseSum];
+     </script>
     <script th:src="@{/js/engurafu.js}"></script>
     </body>
 </html>

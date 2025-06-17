@@ -16,4 +16,7 @@ public class BudgetService {
     budget.setBudget(budgetForm.getBudget());
     budgetRepository.insertBudget(budget);
     }
+    public Integer getBudgetAmount(long userId) {
+        return budgetRepository.getBudgetAmount(userId);
+    }
 }

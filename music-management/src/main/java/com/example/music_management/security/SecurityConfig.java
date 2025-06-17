@@ -34,7 +34,7 @@ public class SecurityConfig {
                 .formLogin(login -> login
                 .loginProcessingUrl("/login")
                 .loginPage("/login")
-                .defaultSuccessUrl("/albums/ie")
+                .defaultSuccessUrl("/albums")
                 .failureUrl("/login?error")
                 .permitAll()
             );

@@ -10,6 +10,7 @@ import com.example.music_management.form.IEForm;
 import com.example.music_management.form.MusicForm;
 import com.example.music_management.security.CustomUserDetails;
 import com.example.music_management.service.AlbumService;
+import com.example.music_management.service.BudgetService;
 import com.example.music_management.service.IEService;
 import com.example.music_management.service.MusicService;
 import com.example.music_management.viewmodel.AlbumViewModel;
@@ -36,12 +37,35 @@ public class AlbumController {
     private final AlbumService albumService;
     private final MusicService musicService;
     private final IEService ieService;
-    
-    public AlbumController(AlbumService albumService,MusicService musicService,IEService ieService){
+    private final BudgetService budgetService;
+    private static final String[] TYPES = {"収入", "支出"};
+    public AlbumController(AlbumService albumService,MusicService musicService,IEService ieService,BudgetService budgetService){
         this.albumService = albumService;
         this.musicService = musicService;
         this.ieService = ieService;
+        this.budgetService = budgetService;
     }
+    //Home画面
+    @GetMapping
+    public String home(Model model,@AuthenticationPrincipal CustomUserDetails customUserDetails) {
+        long userId = customUserDetails.getUserId();
+        List<IE> IEList = ieService.getAllIE(userId);
+        Integer incomeSum = ieService.getIncomeSum(userId);
+        Integer expenseSum = ieService.getExpenseSum(userId);
+        Integer budget = budgetService.getBudgetAmount(userId);
+        if (incomeSum == null) {
+            incomeSum = 0;
+        }
+        if (expenseSum == null) {
+            expenseSum = 0;
+        }
+        model.addAttribute("types", TYPES);
+        model.addAttribute("IEList", IEList);
+        model.addAttribute("incomeSum", incomeSum);
+        model.addAttribute("expenseSum", expenseSum);
+        model.addAttribute("budget", budget);
+        return "album/album-list"; 
+    }   
 
     @GetMapping("/new")
     public String albumForm(Model model) {
@@ -53,17 +77,10 @@ public class AlbumController {
     public String createIE(IEForm ieForm, @AuthenticationPrincipal CustomUserDetails customUserDetails) {
         long userId = customUserDetails.getUserId();
         ieService.createIE(ieForm, userId);
-        return "redirect:/albums/ie";
+        return "redirect:/albums";
     }
 
-    @GetMapping
-    public String listAlbums(Model model) {
-        
-        List<AlbumViewModel> albums = albumService.getAllAlbumsWithMusicCount();
-        model.addAttribute("albums", albums);
-        return "album/album-list"; 
-    }   
-
+    
     /*@PostMapping("/new")
     public String createAlbum(AlbumForm albumForm/* , Model model*///) {
         //albumService.createAlbum(albumForm);
@@ -132,12 +149,12 @@ public class AlbumController {
         musicService.updateMusic(musicId, music);
         return "redirect:/albums/" + albumId;
     }
-    @GetMapping("/ie")
-    public String ListIE(Model model,@AuthenticationPrincipal CustomUserDetails userDetails) {
-        List<IE> ie = ieService.getAllIEWithMusicCount(userDetails.getUserId());
-        model.addAttribute("IE", ie);
-        return "album/album-list"; 
-    }   
+    // @GetMapping("/ie")
+    // public String ListIE(Model model,@AuthenticationPrincipal CustomUserDetails userDetails) {
+    //     List<IE> ie = ieService.getAllIEWithMusicCount(userDetails.getUserId());
+    //     model.addAttribute("IE", ie);
+    //     return "album/album-list"; 
+    // }   
 
     @GetMapping("/detail")
     public String ListIE2(Model model,@AuthenticationPrincipal CustomUserDetails userDetails) {
@@ -149,7 +166,7 @@ public class AlbumController {
     @PostMapping("/detail/{ieId}/delete")
     public String deleteIE(@PathVariable long ieId) {
         ieService.deleteIE(ieId);
-        return "redirect:/albums/ie";
+        return "redirect:/albums";
     }
 
     @GetMapping("/detail/{ieId}/edit")
@@ -162,7 +179,7 @@ public class AlbumController {
     @PostMapping("/detail/{ieId}/edit")
     public String updateIE(@PathVariable long ieId, IE ie) {
         ieService.updateIE(ieId, ie);
-        return "redirect:/albums/ie";
+        return "redirect:/albums";
     }
     
 }

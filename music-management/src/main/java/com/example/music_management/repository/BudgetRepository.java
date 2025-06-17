@@ -13,4 +13,7 @@ public class BudgetRepository {
     public void insertBudget(Budget budget) {
     budgetMapper.insertBudget(budget);
     }
+    public Integer getBudgetAmount(long userId) {
+        return budgetMapper.selectBudgetAmount(userId);
+    }
 }
