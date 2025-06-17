@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{layout :: head(収入・支出編集, ~{::links})}">
-  <th:block th:fragment="links">
-    <link rel="stylesheet" th:href="@{/css/add.css}">
-  </th:block>
-</head>
+<html lang ="ja" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout :: head(アルバム一覧, ~{::links})}">
+        <th:block th:fragment="links">
+          <link rel="stylesheet" th:href="@{/css/edit2.css}">
+        </th:block>
+    </head>
 <body>
   <div th:replace="~{layout :: header}"></div>
   <div class="all">
@@ -24,7 +24,7 @@
             </div>
             <button type="submit"style="margin-top:20px;color:#ffa500;background-color:#ffff93;border:2px solid #ffa500;">追加</button>
         </div> -->
-      <form th:action="@{/albums/detail/{ieId}/edit(ieId=${album.ieId})}" th:object="${ie}" method="post">
+      <form th:action="@{/albums/detail/{ieId}/edit(ieId=${IE.ieId})}" th:object="${IE}" method="post">
         <fieldset class="radio-2">
           <label>
             <input type="radio" name="radio-2" th:field="*{type}" value="0" checked />収入
@@ -34,8 +34,8 @@
           </label>
         </fieldset>
         <div>
-          <label for="memo" class="label">メモ</label>
-          <input type="text" id="memo" name="memo" th:field="*{memo}">
+          <label for="category" class="label">メモ</label>
+          <input type="text" id="category" name="category" th:field="*{category}">
         </div>
         <div>
           <label for="amount" class="label">金額</label>

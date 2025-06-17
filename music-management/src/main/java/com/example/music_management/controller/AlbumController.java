@@ -155,8 +155,8 @@ public class AlbumController {
     @GetMapping("/detail/{ieId}/edit")
     public String editIE(@PathVariable long ieId, Model model) {
         IE ie = ieService.selectIEById(ieId);
-        model.addAttribute("ie", ie);
-        return "album/album-edit2";
+        model.addAttribute("IE", ie);
+        return "album/album-edit";
     }
 
     @PostMapping("/detail/{ieId}/edit")
