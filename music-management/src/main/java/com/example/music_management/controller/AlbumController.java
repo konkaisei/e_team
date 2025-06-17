@@ -149,7 +149,7 @@ public class AlbumController {
     @PostMapping("/detail/{ieId}/delete")
     public String deleteIE(@PathVariable long ieId) {
         ieService.deleteIE(ieId);
-        return "redirect:/albums/ie";
+        return "redirect:/albums/detail";
     }
 
     @GetMapping("/detail/{ieId}/edit")
@@ -162,7 +162,7 @@ public class AlbumController {
     @PostMapping("/detail/{ieId}/edit")
     public String updateIE(@PathVariable long ieId, IE ie) {
         ieService.updateIE(ieId, ie);
-        return "redirect:/albums/ie";
+        return "redirect:/albums/detail";
     }
     
 }
