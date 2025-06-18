@@ -71,6 +71,11 @@ public class AlbumController {
         return "album/album-list"; 
     }   
 
+    @GetMapping("/")
+    public String getMethodName(Model model) {
+        return "redirect:/albums";
+    }
+    
     @GetMapping("/new")
     public String albumForm(Model model) {
         IEForm ieForm = new IEForm();
