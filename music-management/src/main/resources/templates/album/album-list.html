@@ -24,7 +24,7 @@
                         <img th:src="@{/img/boy.png}"alt="今月の収支">
                         <div class="balloon4">
                             <h3 style="margin-right: 20px;">今月の支出</h3>
-                            <h3>92,800</h3>
+                            <h3 th:text="${expenseSum + '円'}">支出表示</h3>
                         </div>
                     </div>
             </div>
@@ -82,7 +82,14 @@
      <script th:inline = "javascript">
         const incomeSum = /*[[${incomeSum}]]*/ 0;
         const expenseSum = /*[[${expenseSum}]]*/ 0;
+        const budget = /*[[${budget}]]*/ 0;
         const chartData = [incomeSum,expenseSum];
+
+        if (expense > budget) {
+            documment.getElementById('warnigMessage').textContent = '⚠ 支出が予算額を上回りました ⚠';
+        }else if(expense > budget * 0.8) {
+            documment.getElementById('warnigMessage').textContent = '⚠ 支出が予算額を上回りそうです！';
+        }
      </script>
     <script th:src="@{/js/engurafu.js}"></script>
     </body>
