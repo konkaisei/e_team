@@ -28,11 +28,12 @@ public class BudgetController {
      }
 
      
-
+/* 
      @GetMapping("/budget-23")
      public String albumForm(Model model) {
           AlbumForm albumForm = new AlbumForm();
           model.addAttribute("albumForm", albumForm);
           return "album/album-budget";
      }
+          */
 }

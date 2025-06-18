@@ -4,5 +4,7 @@ import lombok.Data;
 
 @Data
 public class Budget {
-    private int budget;
+    private int budgetAmount;
+    private long userId;
+    private int budgetId;
 }

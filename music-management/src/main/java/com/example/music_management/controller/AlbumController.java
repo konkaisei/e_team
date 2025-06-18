@@ -4,15 +4,19 @@ import java.util.List;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.example.music_management.entity.Album;
 import com.example.music_management.entity.IE;
 import com.example.music_management.form.IEForm;
 import com.example.music_management.form.MusicForm;
+import com.example.music_management.form.BudgetForm;
 import com.example.music_management.security.CustomUserDetails;
 import com.example.music_management.service.AlbumService;
 import com.example.music_management.service.BudgetService;
 import com.example.music_management.service.IEService;
 import com.example.music_management.service.MusicService;
+import com.example.music_management.service.BudgetService;
 import com.example.music_management.viewmodel.AlbumViewModel;
 import com.example.music_management.viewmodel.MusicViewModel;
 
@@ -169,6 +173,7 @@ public class AlbumController {
         return "redirect:/albums/detail";
     }
 
+    //編集
     @GetMapping("/detail/{ieId}/edit")
     public String editIE(@PathVariable long ieId, Model model) {
         IE ie = ieService.selectIEById(ieId);
@@ -182,4 +187,24 @@ public class AlbumController {
         return "redirect:/albums/detail";
     }
     
+    // 予算反映の実装
+    @GetMapping("/budget-23")
+    public String editBudgetAmount(Model model, @AuthenticationPrincipal CustomUserDetails customUserDetails) {
+        return "album/album-budget";
+    }
+
+    @PostMapping("/budget-23")
+    public String updateBudgetAmount(@RequestParam(required = false) Integer budgetAmount, @AuthenticationPrincipal CustomUserDetails customUserDetails, BudgetForm budget) {
+        long userId = customUserDetails.getUserId();
+        if (budget.getBudget() == 0) {
+        budget.setBudget(0);
+        }
+        budgetService.getBudgetAmount(userId);
+        if (budgetService.getBudgetAmount(userId) == null) {
+            budgetService.createBudget(budget.getBudget(), userId);
+        }else{
+            budgetService.updateBudgetAmount(budget.getBudget(), userId);
+        }
+        return "redirect:/albums";
+    }
 }
