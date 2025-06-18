@@ -16,7 +16,7 @@
                         <img th:src="@{/img/girl.png}"alt="今月の予算">
                         <div class="balloon4">
                             <h3 style="margin-right: 20px">今月の予算</h3>
-                            <h3 th:if = "${budget == null}" style="margin-right: 20px" th:text="予算を設定してください">予算表示</h3>
+                            <h3 th:if = "${budget == null}" style="margin-right: 20px" th:text="未設定">予算表示</h3>
                             <h3 th:if = "${budget != null}" style="margin-right: 20px" th:text="${budget + '円'}">予算表示</h3>
                         </div>
                     </div>
@@ -52,12 +52,12 @@
             </thead>
             <tbody>
                 <tr th:each="album : ${IEList}">
-                    <td th:if="${album.type==0}"><span th:text="収入" style="color:blue">album id</span></td>
-                    <td th:if="${album.type==1}"><span th:text="支出" style="color:red">album id</span></td>
-                    <td th:if="${album.type==0}"><span th:text="${album.category}" style="color:blue">album title</span></a></td>
-                    <td th:if="${album.type==1}"><span th:text="${album.category}" style="color:red">album title</span></a></td>
-                    <td th:if="${album.type==0}"><span th:text="${album.amount}" style="color:blue">album artist</span></td>
-                    <td th:if="${album.type==1}"><span th:text="${album.amount}" style="color:red">album artist</span></td>
+                    <td th:if="${album.type==0}"><span th:text="収入" style="color:rgb(40, 40, 255)">album id</span></td>
+                    <td th:if="${album.type==1}"><span th:text="支出" style="color:rgb(255, 99, 132)">album id</span></td>
+                    <td th:if="${album.type==0}"><span th:text="${album.category}" style="color:rgb(40, 40, 255)">album title</span></a></td>
+                    <td th:if="${album.type==1}"><span th:text="${album.category}" style="color:rgb(255, 99, 132)">album title</span></a></td>
+                    <td th:if="${album.type==0}"><span th:text="${album.amount}" style="color:rgb(40, 40, 255)">album artist</span></td>
+                    <td th:if="${album.type==1}"><span th:text="${album.amount}" style="color:rgb(255, 99, 132)">album artist</span></td>
                     <!-- <td><span th:text="${album.releaseDate}">album releaseDate</span></td>
                     <td><span th:text="${album.musicCount}">album musicCount</span></td> -->
                     <!-- <td>
