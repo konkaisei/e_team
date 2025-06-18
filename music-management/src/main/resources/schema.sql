@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS favorites (
 --　schema.sqlに以下を追加
 CREATE TABLE IF NOT EXISTS budgets (
     budget_id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    user_id INTEGER,
+    user_id INTEGER NOT NULL,
     budget_date DATE,
     budget_amount DECIMAL(10,2),
     month_expenses DECIMAL(10,2),
@@ -43,10 +43,10 @@ CREATE TABLE IF NOT EXISTS budgets (
 
 create table IF NOT EXISTS incomeExpense (
     IE_id integer auto_increment primary key,
-    type integer default 0,
+    user_id integer not null,
+    type integer default 0 not null,
     check(type in(0, 1)),
     amount integer,
-    category varchar(255),
-    user_id integer not null,
+    category varchar(255) ,
     foreign key (user_id) references users(user_id)
 );

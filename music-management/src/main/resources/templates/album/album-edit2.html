@@ -44,10 +44,12 @@
             </thead>
             <tbody>
                 <tr th:each="album : ${IE}">
-                    <td th:if="${album.type==0}"><span th:text="収入">album id</span></td>
-                    <td th:if="${album.type==1}"><span th:text="支出">album id</span></td>
-                    <td><span th:text="${album.category}">album title</span></a></td>
-                    <td><span th:text="${album.amount}">album artist</span></td>
+                    <td th:if="${album.type==0}"><span th:text="収入" style="color:blue">album id</span></td>
+                    <td th:if="${album.type==1}"><span th:text="支出" style="color:red">album id</span></td>
+                    <td th:if="${album.type==0}"><span th:text="${album.category}" style="color:blue">album title</span></a></td>
+                    <td th:if="${album.type==1}"><span th:text="${album.category}" style="color:red">album title</span></a></td>
+                    <td th:if="${album.type==0}"><span th:text="${album.amount}" style="color:blue">album artist</span></td>
+                    <td th:if="${album.type==1}"><span th:text="${album.amount}" style="color:red">album artist</span></td>
                     <td>
                         <form th:action="@{/albums/detail/{ieId}/edit(ieId=${album.ieId})}" method="get">
                             <button type="submit">編集</button>
