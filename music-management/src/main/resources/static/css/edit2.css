@@ -20,7 +20,7 @@
  text-align: center;
  border-collapse: collapse;
  border-spacing: 0;
- border-top: solid 1px #85514B;
+ border: solid 1px #85514B;
 }
 .design03 tr:nth-child(2n+1) {
  background: #FFFFFF;

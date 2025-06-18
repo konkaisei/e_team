@@ -1,3 +1,4 @@
+
 .all{
     background-color: #ffffe0;
     max-height: fit-content;
@@ -10,7 +11,7 @@ a{
     text-decoration: none;
 }
 .div1{
-    margin: 10px 150px;
+    margin: 10px 170px;
     align-items: center;
     text-align: center;
 }
@@ -27,7 +28,7 @@ a{
  text-align: center;
  border-collapse: collapse;
  border-spacing: 0;
- border-top: solid 1px #85514b;
+ border: solid 1px #85514b;
 }
 .design03 tr:nth-child(2n+1) {
  background: #ffffff;
@@ -38,7 +39,7 @@ a{
  border-bottom: solid 1px #85514b;
 }
 tr{
-  /* color: black; */
+  color: black;
 }
 img{
     width: 120px;
@@ -82,12 +83,12 @@ img{
 } */
 .h2{
     margin-bottom: 20px;
-    margin-left: 300px;
+    margin-left: 365px;
 }
 #js-result{
   width: 270px;
   height: 270px;
-  margin: 0px 240px;
+  margin: 0px 300px;
 }
 .all2{
   display: flex;
