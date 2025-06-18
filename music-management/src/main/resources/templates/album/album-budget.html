@@ -27,11 +27,11 @@
         document.write(output);
     </script>
     <div>
-        <h2>予算の登録</h2>
-        <form th:action="@{/albums/new}" th:object="${albumForm}" method="post">
+        <h2>予算登録</h2>
+        <form th:action="@{/albums/budget-23}" method="post">
             <div>
-                <label for="artist"class="label">金額</label>
-                <input type="text" id="artist" name="artist" th:field="*{artist}">
+            <label for="budgetAmount" class="label">予算</label>
+            <input type="number" id="budgetAmount" name="budget" value="0">
             </div>
             <div>
                 <!-- <label for="release-date">リリース日：</label>

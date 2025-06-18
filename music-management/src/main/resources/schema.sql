@@ -32,25 +32,6 @@ CREATE TABLE IF NOT EXISTS favorites (
 );
 
 --　schema.sqlに以下を追加
-CREATE TABLE IF NOT EXISTS incomes (
-    income_id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    user_id INTEGER,
-    income_date DATE,
-    amount DECIMAL(10,2),
-    category VARCHAR(255),
-    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
-);
-
-
-CREATE TABLE IF NOT EXISTS expenditures (
-    expenditure_id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    user_id INTEGER,
-    expenditure_date DATE,
-    amount DECIMAL(10,2),
-    category VARCHAR(255),
-    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
-);
-
 CREATE TABLE IF NOT EXISTS budgets (
     budget_id INTEGER AUTO_INCREMENT PRIMARY KEY,
     user_id INTEGER,

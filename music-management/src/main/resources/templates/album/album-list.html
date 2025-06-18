@@ -15,7 +15,7 @@
                         <img th:src="@{/img/girl.png}"alt="今月の予算">
                         <div class="balloon4">
                             <h3 style="margin-right: 20px">今月の予算</h3>
-                            <h3 style="margin-right: 20px">125,000</h3>
+                            <h3 style="margin-right: 20px" th:text="${budget + '円'}">予算表示</h3>
                         </div>
                     </div>
                 </form>
