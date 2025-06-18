@@ -166,11 +166,7 @@ public class AlbumController {
     @PostMapping("/detail/{ieId}/delete")
     public String deleteIE(@PathVariable long ieId) {
         ieService.deleteIE(ieId);
-<<<<<<< HEAD
-        return "redirect:/albums";
-=======
         return "redirect:/albums/detail";
->>>>>>> a58aaa065438df22bb6359ac59a395a28df790f1
     }
 
     @GetMapping("/detail/{ieId}/edit")

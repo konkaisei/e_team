@@ -28,7 +28,7 @@ public class SecurityConfig {
                 // h2-consoleの設定
                 .securityMatcher("/h2-console/**")
                 .headers(headers -> headers.frameOptions(
-                         frame -> frame.sameOrigin()))
+                    frame -> frame.sameOrigin()))
                 // 全体への設定
                 .securityMatcher("/**")
                 .formLogin(login -> login
