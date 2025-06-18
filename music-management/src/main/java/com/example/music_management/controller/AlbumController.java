@@ -166,20 +166,24 @@ public class AlbumController {
     @PostMapping("/detail/{ieId}/delete")
     public String deleteIE(@PathVariable long ieId) {
         ieService.deleteIE(ieId);
+<<<<<<< HEAD
         return "redirect:/albums";
+=======
+        return "redirect:/albums/detail";
+>>>>>>> a58aaa065438df22bb6359ac59a395a28df790f1
     }
 
     @GetMapping("/detail/{ieId}/edit")
     public String editIE(@PathVariable long ieId, Model model) {
         IE ie = ieService.selectIEById(ieId);
-        model.addAttribute("ie", ie);
-        return "album/album-edit2";
+        model.addAttribute("IE", ie);
+        return "album/album-edit";
     }
 
     @PostMapping("/detail/{ieId}/edit")
     public String updateIE(@PathVariable long ieId, IE ie) {
         ieService.updateIE(ieId, ie);
-        return "redirect:/albums";
+        return "redirect:/albums/detail";
     }
     
 }

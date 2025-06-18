@@ -34,6 +34,6 @@ public interface IEMapper {
     @Select("select * from incomeExpense where IE_id = #{ieId}")
     IE selectIEById(long ieId);
 
-    @Update("update incomeExpense set type = #{type}, amount = #{amount}, memo = #{memo} where IE_id = #{ieId}")
+    @Update("update incomeExpense set type = #{type}, amount = #{amount}, category = #{category} where IE_id = #{ieId}")
     void updateIE(IE ie);
 }

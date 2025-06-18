@@ -1,30 +1,34 @@
 <!DOCTYPE html>
-<html lang="ja" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{layout :: head(収入・支出編集, ~{::links})}">
-  <th:block th:fragment="links">
-    <link rel="stylesheet" th:href="@{/css/add.css}">
-  </th:block>
-</head>
+<html lang ="ja" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout :: head(アルバム一覧, ~{::links})}">
+        <th:block th:fragment="links">
+          <link rel="stylesheet" th:href="@{/css/edit.css}">
+        </th:block>
+    </head>
 <body>
   <div th:replace="~{layout :: header}"></div>
   <div class="all">
     <div class="div1">
+              <script type="text/javascript">
+        var imglist = new Array(
+            "/img/cat1.png",
+            "/img/cat2.png",
+            "/img/cat3.png",
+            "/img/cat4.png",
+            "/img/cat5.png",
+            "/img/cat6.png",
+            "/img/cat7.png",
+            "/img/cat8.png",
+            "/img/cat9.png",
+            "/img/cat10.png"
+        );
+        var selectnum = Math.floor(Math.random() * imglist.length);
+        var output = "<img src=" + imglist[selectnum] + " class='cat1'>";
+        document.write(output);
+    </script>
+    <div>
       <h2>収入と支出の編集</h2>
-      <!-- <select id="menu" name="menu"style="margin: 20px auto;display: flex;width: 200px; height: 30px;text-align: center;color:#ffa500;">
-        <div style="margin: 20px auto;">
-         <label for="menu"style="margin: 20px auto;display: flex;width: 200px; height: 30px;text-align: center;color:#ffa500;">収入と支出の切替を選択してください:</label>
-        <option value="option1">支出</option>
-        <option value="option2">収入</option>
-    </select>
-  -->
-      <!-- </div>
-           <div style="background-color:#ffff93;border:2px solid #ffa500; width: 200px; height: 50px;text-align: center;">金額</div>
-           <div>
-             <input style="border:2px solid #ffa500; width: 200px; height: 50px;">
-            </div>
-            <button type="submit"style="margin-top:20px;color:#ffa500;background-color:#ffff93;border:2px solid #ffa500;">追加</button>
-        </div> -->
-      <form th:action="@{/albums/detail/{ieId}/edit(ieId=${album.ieId})}" th:object="${ie}" method="post">
+      <form th:action="@{/albums/detail/{ieId}/edit(ieId=${IE.ieId})}" th:object="${IE}" method="post">
         <fieldset class="radio-2">
           <label>
             <input type="radio" name="radio-2" th:field="*{type}" value="0" checked />収入
@@ -34,8 +38,8 @@
           </label>
         </fieldset>
         <div>
-          <label for="memo" class="label">メモ</label>
-          <input type="text" id="memo" name="memo" th:field="*{memo}">
+          <label for="category" class="label">メモ</label>
+          <input type="text" id="category" name="category" th:field="*{category}">
         </div>
         <div>
           <label for="amount" class="label">金額</label>
@@ -43,6 +47,24 @@
         </div>
         <button type="submit">編集</button>
       </form>
+    </div>
+              <script type="text/javascript">
+        var imglist = new Array(
+            "/img/cat1.png",
+            "/img/cat2.png",
+            "/img/cat3.png",
+            "/img/cat4.png",
+            "/img/cat5.png",
+            "/img/cat6.png",
+            "/img/cat7.png",
+            "/img/cat8.png",
+            "/img/cat9.png",
+            "/img/cat10.png"
+        );
+        var selectnum = Math.floor(Math.random() * imglist.length);
+        var output = "<img src=" + imglist[selectnum] + " class='cat2'>";
+        document.write(output);
+    </script>
     </div>
 </body>
 </html>

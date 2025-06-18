@@ -1,0 +1,141 @@
+.all{
+    background-color: #ffefe0;
+    max-height: fit-content;
+    margin: 25px 50px;
+    color: #ff4747;
+    padding: 30px;
+    
+}
+/* .all2{
+    background: url(../img/logo.png);
+    background-size: cover;
+    opacity: 0.2;
+    z-index: 999;
+} */
+h2{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.div1{
+  display: flex;
+    margin: 0 auto;
+    max-width: fit-content;
+    text-align: center;
+    /* opacity: 1; */
+    /* z-index: 1; */
+}
+/* ラベル */
+.label{
+    font-size: 22px;
+    margin: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+button {
+  background-color: #ffffff;
+  border: 2px solid #ffa500;
+  color: #ff4747;
+  text-align: center;
+  padding: 5px 12px;
+  margin: 5px 0;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ffeaaa;
+}
+
+.radio-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3em 2em;
+    border: none;
+}
+
+.radio-2 label {
+    display: flex;
+    align-items: center;
+    gap: 0 .5em;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.radio-2 label::before,
+.radio-2 label::after {
+    border-radius: 50%;
+    content: '';
+}
+
+.radio-2 label::before {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ebdee4;
+    box-sizing: border-box;
+}
+
+.radio-2 label::after {
+    position: absolute;
+    top: 50%;
+    left: 9px;
+    transform: translate(-50%, -50%);
+    width: 9px;
+    height: 9px;
+    background-color: #ebdee3;
+}
+
+.radio-2 label:has(:checked)::after {
+    background-color: #d02550;
+    animation: anim-radio-2 .3s linear;
+}
+
+@keyframes anim-radio-2 {
+    0% {
+        box-shadow: 0 0 0 1px transparent;
+    }
+    50% {
+        box-shadow: 0 0 0 10px #d0256733;
+    }
+    100% {
+        box-shadow: 0 0 0 10px transparent;
+    }
+}
+
+.radio-2 input {
+    display: none;
+}
+
+/* 見出し */
+h2 {
+  position: relative;
+  background: #ffcccc;
+  box-shadow: 0px 0px 0px 5px #ffcccc;
+  border: dashed 2px rgb(255, 110, 110);
+  padding: 0.2em 0.5em;
+  color: #454545;
+  color: #ff0000;
+}
+
+h2:after {
+  position: absolute;
+  content: '';
+  left: -7px;
+  top: -7px;
+  border-width: 0 0 15px 15px;
+  border-style: solid;
+  border-color: #fff #fff #ffa8b7;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+.cat1{
+  width: 300px;
+  height: 300px;
+  opacity: 0.3;
+  margin-right: 100px;
+}
+.cat2{
+  width: 300px;
+  height: 300px;
+  opacity: 0.3;
+  margin-left: 100px;
+}
