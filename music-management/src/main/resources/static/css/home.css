@@ -10,11 +10,13 @@ a{
     text-decoration: none;
 }
 .div1{
-    margin: 10px 200px;
+    margin: 10px 150px;
+    align-items: center;
+    text-align: center;
 }
-.date{
-    /* margin: 20px 20px; */
-}
+/* .date{
+    margin: 20px 20px;
+} */
 
 
 
