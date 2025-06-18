@@ -8,6 +8,7 @@
     <body>
         <div th:replace="~{layout :: header}"></div>
         <div class="all">
+            <div id="warningMessage" style="color: red;"></div>
         <div style="display: flex;  align-items: center;"class="div1">
             <div style="display: flex; margin: 20px 10px;">
                 <form th:action="@{/budget}" method="get">
@@ -15,7 +16,8 @@
                         <img th:src="@{/img/girl.png}"alt="今月の予算">
                         <div class="balloon4">
                             <h3 style="margin-right: 20px">今月の予算</h3>
-                            <h3 style="margin-right: 20px" th:text="${budget + '円'}">予算表示</h3>
+                            <h3 th:if = "${budget == null}" style="margin-right: 20px" th:text="予算を設定してください">予算表示</h3>
+                            <h3 th:if = "${budget != null}" style="margin-right: 20px" th:text="${budget + '円'}">予算表示</h3>
                         </div>
                     </div>
                 </form>
@@ -85,10 +87,10 @@
         const budget = /*[[${budget}]]*/ 0;
         const chartData = [incomeSum,expenseSum];
 
-        if (expense > budget) {
-            documment.getElementById('warnigMessage').textContent = '⚠ 支出が予算額を上回りました ⚠';
-        }else if(expense > budget * 0.8) {
-            documment.getElementById('warnigMessage').textContent = '⚠ 支出が予算額を上回りそうです！';
+        if (expenseSum > budget) {
+            document.getElementById('warningMessage').textContent = '⚠ 支出が予算額を上回りました ⚠';
+        }else if(expenseSum > budget * 0.8) {
+            document.getElementById('warningMessage').textContent = '⚠ 支出が予算額を上回りそうです！';
         }
      </script>
     <script th:src="@{/js/engurafu.js}"></script>
