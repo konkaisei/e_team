@@ -15,12 +15,16 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public void createUser(UserForm userForm) {
-        User user = new User();
-        user.setUsername(userForm.getUsername());
+    public void createUser(UserForm userForm)throws Exception {
+        if(userRepository.selectUserByUsername(userForm.getUsername()) == null){
+            User user = new User();
+            user.setUsername(userForm.getUsername());
 
-        String hashePassword = passwordEncoder.encode(userForm.getPassword());
-        user.setPassword(hashePassword);
-        userRepository.insertUser(user);
+            String hashePassword = passwordEncoder.encode(userForm.getPassword());
+            user.setPassword(hashePassword);
+            userRepository.insertUser(user);
+        }else{
+            throw new Exception("");
+        }
     }
 }

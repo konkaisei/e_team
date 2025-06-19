@@ -21,7 +21,14 @@ public class RegistrationController {
     }
     @PostMapping("/register")
     public String registerUser(UserForm userForm) {
-        userService.createUser(userForm);
-        return "redirect:/login?register";
+        try {
+            userService.createUser(userForm);
+            return "redirect:/login?register";
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return "redirect:/register?miss";
+        }
+        
     }
 }

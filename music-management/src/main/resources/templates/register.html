@@ -10,7 +10,10 @@
     <form th:action="@{/register}" th:object="${userForm}" method="post">
        <div style="text-align: center;padding-bottom: 20px;">
       <img th:src="@{/img/logo.png}"alt="ロゴ" style="width: 260px; height: 80px;">
-      </div> 
+      </div>
+       <div th:if="${param.miss}" style="color:red">
+        そのアカウント名はすでに使われています
+    </div>
       <div class="mb-3" style="text-align: center;display: flex;justify-content: center;align-items: center">
             <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"th:field="*{username}"placeholder="名前"style="border:2px solid #ffa500;outline:none;box-shadow: 0 0 0 0.2rem rgba(255,255,255,1);width: 350px; height:40px;">
         </div>
